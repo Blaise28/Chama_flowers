@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chama flowers</title>
+
+    <!-- font awesome -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- start preloader -->
+    <div class="preloader_contener">
+        <div class="preloader"></div>
+    </div>
+    <!-- End preloader -->
+    <!-- Start navigation -->
+    <nav>
+        <section class="logo">
+            <div>
+                <img src="logo_chama_flowers.svg" alt="un logo de chama flowers">
+                <span class="side_bar">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+            <form>
+                <input type="text" id="search_input" class="search_input" placeholder="Recherche...">
+                <label for="search_input" class="btn_search">
+                    <i class="fas fa-search"></i>
+                </label>
+            </form>
+        </section>
+        <section class="links_contener">
+            <span class="btn_close">
+                <i class="fas fa-times"></i>
+            </span>
+            <ul>
+                <li>
+                    <a href="#" class="link"> Acceuil</a>
+                </li>
+                <li class="categ">
+                    <a href="#" class="link"> Categories
+                        <span class="down_up_bar"></span>
+                    </a>
+                    <div class="subtitles_categ">
+                        <a href="#Choco-cake">Choco-Cake</a>
+                        <a href="#B_simple">Bouquet Simple</a>
+                        <a href="# B_Dot">Bouquet-Dot</a>
+                        <a href="#B_marie">Bouquet de Mariée</a>
+                        <a href="#P_fleurs">Panier de fleurs</a>
+                        <a href="#F_table">fleurs de table</a>
+                        <a href="#F_tombe">fleurs de tombe</a>
+                        <a href="#B_accompagne">Bouquet accompagne</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#p_recent" class="link">Produits Recents</a>
+                </li>
+                <li>
+                    <a href="#contact" class="link">Contact</a>
+            </ul>
+        </section>
+    </nav>
+    <!-- End navigation -->
+    <!-- start header -->
+    <header>
+        <div class="contener_desc">
+            <h1>Bienvenu sur Chama flowers</h1>
+            <h3>Vous etês à Bujumbura et vous voulez acheter toutes sortes de fleurs
+            </h3>
+            <span>
+                <a href="#">Voir nos Produits</a>
+            </span>
+        </div>
+    </header>
+    <!-- End header -->
+    <!-- start section Categories -->
+    <section class="section_categ" id="categories">
+        <div class="title">
+            <h2>Categories</h2>
+        </div>
+        <div class="contener_cards_categ">
+            <div class="card_categ" id="Choco-cake">
+                <img src="images_compresser/ananthu-selvam-62saZ_T5AP0-unsplash.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Choco-cake</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="B_simple">
+                <img src="images_compresser/christie-kim-0IsBu45B3T8-unsplash_large.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Bouquet simple</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="B_Dot">
+                <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Bouquet Dot</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="B_marie">
+                <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash_large.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Bouquet de mariée</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="P_fleurs">
+                <img src="images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Panier de fleurs</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="F_table">
+                <img src="images_compresser/ryunosuke-kikuno-cFxUZ7UAf-c-unsplash.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>fleur de table</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="F_tombe">
+                <img src="images_compresser/t-kaiser-s20DwgFw0hI-unsplash.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Fleurs de tombe</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+            <div class="card_categ" id="B_accompagne">
+                <img src="images_compresser/uljana-maljutina-NFj6pEUdmpY-unsplash.jpg" alt="">
+                <div class="card_categ_desc">
+                    <h3>Bouquet accompagne</h3>
+                    <button>Voir dans cette categorie</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End section Categories -->
+    <!-- Start recent product -->
+    <section class="section_prod" id="p_recent">
+        <div class="title">
+            <h2>Produits Recents</h2>
+        </div>
+        <div class="contener_cards_prod">
+
+            <div class="card_prod">
+                <img src="images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>Choco-Cake</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            
+            <div class="card_prod">
+                <img src="images_compresser/christie-kim-0IsBu45B3T8-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>Bouquet simple</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input  type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <div class="card_prod">
+                <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>Bouquet Dot</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <div class="card_prod">
+                <img src="images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>Bouquet de Mariée</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <div class="card_prod">
+                <img src="images_compresser/christie-kim-0IsBu45B3T8-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>fleurs de table</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <div class="card_prod">
+                <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash_large.jpg" alt="">
+                <div class="card_prod_desc">
+                    <h2>Bouquet accompagne</h2>
+                    <div class="contener_desc_prod">
+                        <div class="quant_value_prod">
+                            <span class="quant">
+                            <h3>Quantite :</h3>
+                            <input type="number" min="1" max="1000" value="1">
+                            </span>
+                            <span class="price">BIF <strong>4000</strong>
+                            </span>
+                        </div>
+                        <span class="link_prod">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                    <button>Acheter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End recent product -->
+    <!-- start Contact section -->
+    <section class="section_cont" id="contact">
+        <div class="title">
+            <h2>Contact</h2>
+        </div>
+        <div class="contener_map_form">
+            <div class="contener_map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5018.185068529486!2d29.366666896372184!3d-3.365816002928262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c183a65244836d%3A0xa359a954ea18506d!2sTerrain%20Jamaa!5e0!3m2!1sen!2sbi!4v1646685434332!5m2!1sen!2sbi"
+                width="600" height="450" style="border:2px solid var(--white);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <form action="">
+                <h2>Nous contacter</h2>
+                <input type="text" placeholder="Votre Nom">
+                <input type="email" placeholder="Adresse electronique">
+                <input type="number" placeholder="votre numero de telephone">
+                <textarea name="" id="" cols="5" rows="10" placeholder="Votre message"></textarea>
+                <button>Envoyer</button>
+            </form>
+        </div>
+    </section>
+    <!-- End contact section -->
+    <!-- start footer -->
+    <footer>
+        <div class="footer_info">
+            <div class="apropos">
+                <h2>A propos</h2>
+                <p>
+                    Une societe fonde par un etudiant en informatique base au Burundi a Bujumbura
+                    qui vend des fleurs pendants plus deux ans on connait notre travail,on offre des fleurs de qualite.
+                </p>
+            </div>
+            <div class="coord">
+                <h2>Nos coordonnees</h2>
+                <span>
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>+25722232565</h4>
+                </span>
+                <span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Jabe avenue de l'imprimerie</h4>
+                </span>
+                <span>
+                    <i class="far fa-envelope"></i>
+                    <h4>chamaflowers@gmail.com</h4>
+                </span>
+            </div>
+            <div class="liens">
+                <h2>Suivez-nous sur :</h2>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <h3><i class="far fa-copyright"></i>
+                Copyright 2022</h3>
+        </div>
+        <div class="my_logo">
+            <a href="#">
+                <h3>Designer By :</h3>
+                <img src="logo.svg" alt="">
+            </a>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="index.js"></script>
+</body>
+</html>
