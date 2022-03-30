@@ -13,6 +13,7 @@ categories.addEventListener("click",(e)=>{
     down_up_bar.classList.toggle("active");
 });
 
+const nav_scroll=document.querySelector(".links_contener");
 const btn_close=document.querySelector(".links_contener .btn_close");
 const btn_open=document.querySelector(".logo div .side_bar");
 const bloc=document.querySelector("nav .links_contener");
@@ -57,8 +58,7 @@ nav_mob.addEventListener("touchend",(e)=>{
         btn_open.style.display="flex";
     }
 });
-/* lorsque la quantite change l'argent aussi 
-change */
+/* quantite input and price products */
 
 const quant_inputs=document.querySelectorAll(".quant input");
 let quant_avant=1,quant_apres;
@@ -82,3 +82,4 @@ function calcul_prix(quant_avant,quant_apres,prix_initial){
         prix=prix_initial * quant_avant;
     return prix;
 }
+/* like button */

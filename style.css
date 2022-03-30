@@ -14,9 +14,9 @@
 :root{
     --green:#069C54;
     --white: #FFFFFF;
-    --raisin-black: #1D2521;
+    --raisin-black:#1D2521;
     --coul_sec:#C7D1CC;
-    --logo: #E63462;
+    --heart:#b51e45;;
 }
 html{
     font-size: 62.5%;
@@ -127,10 +127,11 @@ nav .logo{
 .btn_search i:hover{
     color: var(--green);
 }
-
-
 nav .links_contener{
     background: var(--coul_sec);
+    position: sticky;
+    z-index: 1000;
+    top: 0;
 }
 .links_contener .btn_close{
     display: none;
@@ -405,6 +406,9 @@ header .contener_desc:hover{
 .link_prod i{
     font-size: 2.3rem;
     margin: 0.4rem 0;
+}
+.link_prod .like:active{
+    color: var(--heart);
 }
 .card_prod_desc button{
     background: var(--green);
