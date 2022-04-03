@@ -16,7 +16,7 @@
     --white: #FFFFFF;
     --raisin-black:#1D2521;
     --coul_sec:#C7D1CC;
-    --heart:#b51e45;;
+    --heart:#b51e45;
 }
 html{
     font-size: 62.5%;
@@ -129,9 +129,13 @@ nav .logo{
 }
 nav .links_contener{
     background: var(--coul_sec);
-    position: sticky;
+}
+nav .links_contener.active{
+    position: fixed;
     z-index: 1000;
+    width: 100%;
     top: 0;
+    box-shadow: 0 3px 10px var(--green);
 }
 .links_contener .btn_close{
     display: none;
@@ -267,9 +271,12 @@ header .contener_desc:hover{
     padding: 1rem;
     border-radius: 0.5rem;
     transition:all .2s ease-in-out;
+    box-shadow: 1px 4px 0 var(--raisin-black);
+    position: relative;
 }
-.contener_desc span a:hover{
-    transform: scale(1.1);
+.contener_desc span a:active{
+    top: 4px;
+    box-shadow: none;
 }
 /* End header */
 
@@ -407,8 +414,29 @@ header .contener_desc:hover{
     font-size: 2.3rem;
     margin: 0.4rem 0;
 }
-.link_prod .like:active{
+.link_prod .like.active{
     color: var(--heart);
+    animation: animateHeart 1s ease-in-out infinite;
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.9);
+  }
+  5% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 .card_prod_desc button{
     background: var(--green);
@@ -454,6 +482,10 @@ header .contener_desc:hover{
     margin: 1rem 0;
     border-radius: 1rem;
 }
+form input.invalid{
+    border-bottom: 3px solid var(--heart);
+    border-right: 2px solid var(--heart);
+}
 .contener_map_form form textarea{
     width: 32rem;
     height: 16rem;
@@ -469,6 +501,7 @@ header .contener_desc:hover{
     font-size: 1.5rem;
 }
 .contener_map_form form button{
+    position: relative;
     background: var(--raisin-black);
     margin: 3rem 0 0.5rem;
     color: var(--white);
@@ -476,6 +509,12 @@ header .contener_desc:hover{
     padding: 0.7rem 3rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    box-shadow: 1px 3px var(--coul_sec);
+    transition: all .3s ease-in;
+}
+.contener_map_form form button:active{
+    top: 3px;
+    box-shadow: none;
 }
 /* end contact section */
 /* start footer */

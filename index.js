@@ -3,6 +3,7 @@ const contener_preloader=document.querySelector(".preloader_contener");
 window.addEventListener("load",()=>{
     contener_preloader.classList.add("fondu_out");
 });
+
 // navigation
 const categories=document.querySelector(".categ");
 const sub_titles_categ=document.querySelector(".subtitles_categ");
@@ -13,7 +14,8 @@ categories.addEventListener("click",(e)=>{
     down_up_bar.classList.toggle("active");
 });
 
-const nav_scroll=document.querySelector(".links_contener");
+const nav=document.querySelector("nav")
+const links_contener=document.querySelector(".links_contener");
 const btn_close=document.querySelector(".links_contener .btn_close");
 const btn_open=document.querySelector(".logo div .side_bar");
 const bloc=document.querySelector("nav .links_contener");
@@ -38,10 +40,28 @@ function nav_links_click(element) {
         btn_open.style.display="flex";
     }); 
 }
+
 nav_links_click(nav_links);
 nav_links_click(nav_categ_links);
 
+/*
+let all_nav_links=document.querySelectorAll(".links_contener .link");
+window.addEventListener("scroll",()=>{
+    let hauteur =nav.offsetHeight - links_contener.offsetHeight;
+    if (window.scrollY > hauteur) {
+        links_contener.classList.toggle("active");
+        links_contener.style.background="#1D2521";
+
+        all_nav_links.forEach(link=>{
+            link.style.color="#fff";
+        });
+    }
+});
+*/
+/* End navigation */
+
 //swap nav bar mobile
+
 let touch_start,touch_end;
 
 let nav_mob=document.querySelector("nav .links_contener");
@@ -82,4 +102,62 @@ function calcul_prix(quant_avant,quant_apres,prix_initial){
         prix=prix_initial * quant_avant;
     return prix;
 }
-/* like button */
+
+/* heart buttons */
+const heart_buttons=document.querySelectorAll(".link_prod .like");
+ 
+heart_buttons.forEach(heart_button => {
+     heart_button.addEventListener("click",()=>{
+        heart_button.classList.toggle("active");
+     });
+ });
+
+/* End heart buttons */
+
+/* validation contact form */
+
+let regex_email=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let regex_nom=/^[a -zéè][-'a-zA-Zéè]+$/;
+
+const name=document.querySelector("form .name");
+const mail=document.querySelector("form .mail");
+const phone=document.querySelector("form .phone");
+
+/*let nom_valid,mail_valid,tel_valid,message_valid;
+
+mail.addEventListener("input",()=>{
+    if(mail.value.match(regex_email)){
+        mail.classList.remove("invalid");
+        return true;
+    }
+    else if(mail.value==""){
+        mail.classList.remove("invalid");
+        return false;
+    }
+    else{
+        mail.classList.add("invalid");
+        return false;
+    }
+});
+*/
+function valid(input,regex){
+    if(input.value.match(regex)){
+        input.classList.remove("invalid");
+        return true;
+    }
+    else if(input.value==""){
+        input.classList.remove("invalid");
+        return false;
+    }
+    else{
+        input.classList.add("invalid");
+        return false;
+    }
+}
+name.addEventListener("input",()=>{
+    valid(name,regex_nom);
+});
+mail.addEventListener("input",()=>{
+    valid(mail,regex_email);
+});
+/* End validation contact form */
