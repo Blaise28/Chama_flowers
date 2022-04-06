@@ -19,8 +19,25 @@
 
     <!-- font awesome -->
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d02835d4dc.js" crossorigin="anonymous"></script>
+
+    <!-- SweetAlert -->
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- EmailJS -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_sA2mntyYPenxl5wK6t6bD");
+    })(); 
+    </script>
+
+    <!-- Phone number API -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -306,7 +323,7 @@
                 <h2>Nous contacter</h2>
                 <input type="text" class="name" placeholder="Votre Nom" required>
                 <input type="email" class="mail" placeholder="Adresse electronique" required>
-                <input type="number" class="phone" placeholder="votre numero de telephone" required>
+                <input type="number" class="phone" required>
                 <textarea name="" id="" cols="5" rows="10" placeholder="Votre message" required></textarea>
                 <button>Envoyer</button>
             </form>

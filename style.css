@@ -802,3 +802,8 @@ footer .my_logo{
         font-size: 38%;
     } 
 }
+@media screen and (max-width: 320px){
+    html{
+        font-size: 35%;
+    }
+}

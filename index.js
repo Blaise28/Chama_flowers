@@ -114,32 +114,27 @@ heart_buttons.forEach(heart_button => {
 
 /* End heart buttons */
 
-/* validation contact form */
+/* start share buttons */
+
+/* End share buttons */
+
+/* start validation contact form */
 
 let regex_email=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-let regex_nom=/^[a -zéè][-'a-zA-Zéè]+$/;
+let regex_nom=/[a-zA-Zéè -?]/;
 
 const name=document.querySelector("form .name");
 const mail=document.querySelector("form .mail");
 const phone=document.querySelector("form .phone");
+const message=document.querySelector("form textarea");
+const button=document.querySelector("form button");
 
-/*let nom_valid,mail_valid,tel_valid,message_valid;
-
-mail.addEventListener("input",()=>{
-    if(mail.value.match(regex_email)){
-        mail.classList.remove("invalid");
-        return true;
-    }
-    else if(mail.value==""){
-        mail.classList.remove("invalid");
-        return false;
-    }
-    else{
-        mail.classList.add("invalid");
-        return false;
-    }
+const phoneInput = window.intlTelInput(phone, {
+    onlyCountries : ["BI", "CG", "KE", "RW"],
+    utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
 });
-*/
+
 function valid(input,regex){
     if(input.value.match(regex)){
         input.classList.remove("invalid");
@@ -154,10 +149,110 @@ function valid(input,regex){
         return false;
     }
 }
+function verification_phone_number(){
+    let exemp_num_p_hol=phoneInput.a.attributes.placeholder.nodeValue;
+    let country_code=phoneInput.b.dataset.dialCode;
+    let num=country_code.concat(phone.value);
+    
+    if(num.length == exemp_num_p_hol.length){
+        phone.classList.remove("invalid");
+        return true;
+    }
+    else if(phone.value==""){
+        phone.classList.remove("invalid");
+        return false;
+    }
+    else{
+        phone.classList.add("invalid");
+        return false;
+    }
+}
+let name_is_valid,mail_is_valid,phone_num_is_valid;
+
 name.addEventListener("input",()=>{
-    valid(name,regex_nom);
+    name_is_valid=valid(name,regex_nom);
 });
 mail.addEventListener("input",()=>{
-    valid(mail,regex_email);
+    mail_is_valid=valid(mail,regex_email);
+});
+phone.addEventListener("input",()=>{
+    phone_num_is_valid=verification_phone_number();
 });
 /* End validation contact form */
+
+/* start Send email EmailJs */
+
+function send_email(nom,email,tel,message){
+    emailjs.send("service_jznakrk","template_s9skp5d",{
+    from_name: email.value,
+    to_name: nom.value,
+    telephone: tel.value,
+    message: message.value,
+    });
+}
+function required(nom,mail,tel,message){
+    if(nom.value=="" || mail.value=="" || tel.value=="" || message.value=="")
+        return true;
+    else
+        return false;
+}
+function succes(name){
+    swal({
+      title: "hey,"+name.value+"",
+      text: "Message recu avec success",
+      icon: "success",
+      button: "Ok",
+    });
+}
+function input_require(){
+    swal({
+      title: "Oups...",
+      text: "Renseigne bien tous les champs svp!!",
+      icon: "error",
+      confirmButtonColor:"red",
+    });
+}
+function envoi_message() {
+//   let req= required(name,mail,phone,message);
+
+   if(name_is_valid==false || mail_is_valid==false 
+    || phone_num_is_valid==false|| message.value==""){
+    input_require();
+   }
+   else
+   {
+    send_email(name,mail,phone,message);
+    document.querySelector(".contener_map_form form").reset();
+    succes(name);
+   }
+}
+button.addEventListener("click",(e)=>{
+    e.preventDefault();
+    envoi_message();
+})
+;
+/* End send Email */
+
+ /* start send SMS Twilo API */
+
+function Envoi_sms(){
+    const url="https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json ";
+    const auth="AC918cb518fd506d9df8eb561491bd879b:592fb4987dad825af7c3ec99f7f12f36";
+
+    const myHeader=new Headers({
+        "Content-Type":"application/x-www-form-urlencoded",
+        "Authorization":"Basic " + btoa(auth)
+    });
+    const init={
+        method: "POST",
+        headers:myHeader,
+        mode:"cors",
+        body:"To=+25772148589&From=67613675&Body=Hello"
+    }
+
+    fetch(url,init)
+        .then(reponse => console.log(reponse))
+        .catch(error =>console.log(error));
+}
+
+ /* End send SMS */
