@@ -14,50 +14,52 @@ categories.addEventListener("click",(e)=>{
     down_up_bar.classList.toggle("active");
 });
 
-const nav=document.querySelector("nav")
+const nav=document.querySelector("nav");
 const links_contener=document.querySelector(".links_contener");
 const btn_close=document.querySelector(".links_contener .btn_close");
 const btn_open=document.querySelector(".logo div .side_bar");
-const bloc=document.querySelector("nav .links_contener");
 
 btn_open.addEventListener("click",()=>{
-    bloc.classList.add("active");
+    links_contener.classList.add("active");
     btn_open.style.display="none";
 });
 
 btn_close.addEventListener("click",()=>{
-    bloc.classList.remove("active");
-    btn_open.style.display="flex";
+    links_contener.classList.remove("active");
+    btn_open.style.display="";
 });
 
 let nav_links=document.querySelector(".links_contener .link");
 let nav_categ_links=document.querySelector(".categ .subtitles_categ a");
 
-function nav_links_click(element) {
-   element.addEventListener("click",()=>
+function nav_links_click(link) {
+   link.addEventListener("click",()=>
     {
-        bloc.classList.remove("active"); 
-        btn_open.style.display="flex";
+        links_contener.classList.remove("active"); 
+        btn_open.style.display="";
     }); 
 }
 
 nav_links_click(nav_links);
 nav_links_click(nav_categ_links);
 
-/*
-let all_nav_links=document.querySelectorAll(".links_contener .link");
-window.addEventListener("scroll",()=>{
-    let hauteur =nav.offsetHeight - links_contener.offsetHeight;
-    if (window.scrollY > hauteur) {
-        links_contener.classList.toggle("active");
-        links_contener.style.background="#1D2521";
+let scroll_previous=window.scrollY;
+const nav_logo=document.querySelector("nav .logo");
+const all_nav_links=document.querySelectorAll(".links_contener .link");
 
-        all_nav_links.forEach(link=>{
-            link.style.color="#fff";
-        });
+window.addEventListener("scroll",()=>{
+    let scroll_current=window.scrollY;
+    if (scroll_previous > scroll_current){
+        nav.style.top="0px";
+        links_contener.style.boxShadow="none";
     }
+    else{
+        nav.style.top="-"+nav_logo.offsetHeight+"px";
+        links_contener.style.boxShadow="0px 2px 5px var(--raisin-black)";
+    }
+    scroll_previous=scroll_current;
 });
-*/
+
 /* End navigation */
 
 //swap nav bar mobile

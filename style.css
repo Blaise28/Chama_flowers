@@ -74,7 +74,11 @@ body{
 /* End preloader */
 /* star navigtion */
 nav{
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 900;
+    transition: top .6s ease-in;
 }
 nav .logo{
     display: flex;
@@ -82,7 +86,6 @@ nav .logo{
     /*padding: 1rem;*/
     background: var(--green);
     align-items: center;
-
 }
 .logo div img{
     height: 6.5rem;
@@ -129,14 +132,6 @@ nav .logo{
 }
 nav .links_contener{
     background: var(--coul_sec);
-}
-nav .links_contener.active{
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 3px 10px var(--green);
-    transition: top .3s ease-in;
 }
 .links_contener .btn_close{
     display: none;
@@ -629,6 +624,11 @@ footer .my_logo{
 }
 @media screen and (max-width: 768px){
     nav .logo{
+        /*
+        position: fixed;
+        top: 0 !important;
+        width: 100%;
+        */
         flex-direction: column;
         padding: 1rem;
     }
