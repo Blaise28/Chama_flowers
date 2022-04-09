@@ -121,7 +121,7 @@ heart_buttons.forEach(heart_button => {
 /* start validation contact form */
 
 let regex_email=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-let regex_nom=/[a-zA-Zéè -?]/;
+let regex_nom=/[^\d\W]{2,20}[\-\s\']{0,1}/;
 
 const name=document.querySelector("form .name");
 const mail=document.querySelector("form .mail");
@@ -167,7 +167,7 @@ function verification_phone_number(){
         return false;
     }
 }
-let name_is_valid,mail_is_valid,phone_num_is_valid;
+let name_is_valid,mail_is_valid,phone_num_is_valid,message_is_valid;
 
 name.addEventListener("input",()=>{
     name_is_valid=valid(name,regex_nom);
@@ -222,22 +222,28 @@ function envoi_message() {
    else
    {
     send_email(name,mail,phone,message);
-    document.querySelector(".contener_map_form form").reset();
     succes(name);
    }
 }
 button.addEventListener("click",(e)=>{
     e.preventDefault();
     envoi_message();
+    envoi_SMS();
+    document.querySelector("form").reset();
 })
 ;
 /* End send Email */
 
  /* start send SMS Twilo API */
 
-function Envoi_sms(){
-    const url="https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json ";
-    const auth="AC918cb518fd506d9df8eb561491bd879b:592fb4987dad825af7c3ec99f7f12f36";
+function API_SMS(){
+    const url='https://api.twilio.com/2010-04-01/Accounts/AC918cb518fd506d9df8eb561491bd879b/Messages.json';
+    const auth="AC918cb518fd506d9df8eb561491bd879b: 7d9e80c904d4b90e4d6c8ca84e7a0961";
+
+    const numero=encodeURI(phone.value);
+    const msg=encodeURI(message.value);
+    const nom=encodeURI(name.value);
+    const email=encodeURI(mail.value);
 
     const myHeader=new Headers({
         "Content-Type":"application/x-www-form-urlencoded",
@@ -247,12 +253,28 @@ function Envoi_sms(){
         method: "POST",
         headers:myHeader,
         mode:"cors",
-        body:"To=+25772148589&From=67613675&Body=Hello"
+        body:"To=+25772148589&From=+12762423160&Body=\n Nom: "+
+        nom+"\n E-mail :"+
+        email+"\n Numero"+
+        numero+"\n Message :"+
+        msg
     }
 
     fetch(url,init)
-        .then(reponse => console.log(reponse))
-        .catch(error =>console.log(error));
+        .then(reponse=>console.log(reponse))
+        .catch(error=>console.log(error));
 }
+
+function envoi_SMS(){
+    if(phone_num_is_valid==false ||
+     phone.value=="" ){
+        input_require();
+    }
+    else{
+        API_SMS();
+        succes(name);
+    }
+}
+
 
  /* End send SMS */

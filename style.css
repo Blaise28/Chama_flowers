@@ -136,6 +136,7 @@ nav .links_contener.active{
     width: 100%;
     top: 0;
     box-shadow: 0 3px 10px var(--green);
+    transition: top .3s ease-in;
 }
 .links_contener .btn_close{
     display: none;
@@ -302,8 +303,8 @@ header .contener_desc:hover{
 }
 .contener_cards_categ .card_categ{
     overflow: hidden;
-    box-shadow: 2px 1px 2px var(--raisin-black);
-    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px var(--raisin-black);
+    /* border-radius: 0.5rem; */
     transition: transform .2s ease-in-out;
 }
 .contener_cards_categ .card_categ:hover{
