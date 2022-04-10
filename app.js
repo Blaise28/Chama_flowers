@@ -51,17 +51,17 @@ window.addEventListener("scroll",()=>{
     let scroll_current=window.scrollY;
     if (scroll_previous > scroll_current){
         nav.style.top="0px";
-        links_contener.style.boxShadow="none";
     }
     else{
         nav.style.top="-"+nav_logo.offsetHeight+"px";
-        links_contener.style.boxShadow="0px 2px 5px var(--raisin-black)";
     }
     scroll_previous=scroll_current;
 });
-
 /* End navigation */
-
+/*  Start header*/
+const header=document.querySelector("header");
+header.style.top=nav.offsetHeight -20 +"px";
+/* End header */
 //swap nav bar mobile
 
 let touch_start,touch_end;
@@ -240,7 +240,7 @@ button.addEventListener("click",(e)=>{
 
 function API_SMS(){
     const url='https://api.twilio.com/2010-04-01/Accounts/AC918cb518fd506d9df8eb561491bd879b/Messages.json';
-    const auth="AC918cb518fd506d9df8eb561491bd879b: 7d9e80c904d4b90e4d6c8ca84e7a0961";
+    const auth="login: authentification";
 
     const numero=encodeURI(phone.value);
     const msg=encodeURI(message.value);
@@ -255,7 +255,7 @@ function API_SMS(){
         method: "POST",
         headers:myHeader,
         mode:"cors",
-        body:"To=+25772148589&From=+12762423160&Body=\n Nom: "+
+        body:"To=numeroverifie&From=+12762423160&Body=\n Nom: "+
         nom+"\n E-mail :"+
         email+"\n Numero"+
         numero+"\n Message :"+
