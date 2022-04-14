@@ -5,11 +5,12 @@ window.addEventListener("load",()=>{
 });
 
 // navigation
-const categories=document.querySelector(".categ");
+const categorie=document.querySelector(".categ .up_down");
 const sub_titles_categ=document.querySelector(".subtitles_categ");
+const sub_titles_categ_link=document.querySelectorAll(".subtitles_categ a");
 const down_up_bar=document.querySelector(".down_up_bar");
 
-categories.addEventListener("click",(e)=>{
+categorie.addEventListener("click",(e)=>{
     sub_titles_categ.classList.toggle("active");
     down_up_bar.classList.toggle("active");
 });
@@ -29,39 +30,48 @@ btn_close.addEventListener("click",()=>{
     btn_open.style.display="";
 });
 
-let nav_links=document.querySelector(".links_contener .link");
-let nav_categ_links=document.querySelector(".categ .subtitles_categ a");
+const links=document.querySelectorAll(".links_contener li a");
 
-function nav_links_click(link) {
-   link.addEventListener("click",()=>
-    {
+links.forEach(link=>{
+    link.addEventListener("click",(e)=>{
+        e.stopPropagation();
         links_contener.classList.remove("active"); 
         btn_open.style.display="";
-    }); 
-}
-
-nav_links_click(nav_links);
-nav_links_click(nav_categ_links);
+    });
+});
 
 let scroll_previous=window.scrollY;
 const nav_logo=document.querySelector("nav .logo");
 const all_nav_links=document.querySelectorAll(".links_contener .link");
+const header=document.querySelector("header");
+
+// ca demande beaucoup de calcul a la machine
 
 window.addEventListener("scroll",()=>{
     let scroll_current=window.scrollY;
-    if (scroll_previous > scroll_current){
-        nav.style.top="0px";
-    }
-    else{
-        nav.style.top="-"+nav_logo.offsetHeight+"px";
-    }
+    let header_height=header.offsetHeight;
+        if(window.scrollY >= header_height){
+            nav.classList.add("scroll");
+            if (scroll_previous > scroll_current){
+                nav.style.top="0px";
+            }
+            else{
+                nav.style.top="-"+nav_logo.offsetHeight+"px";
+            }
+        }
+        else{
+            nav.classList.remove("scroll");
+        }
     scroll_previous=scroll_current;
 });
 /* End navigation */
+
 /*  Start header*/
-const header=document.querySelector("header");
-header.style.top=nav.offsetHeight -20 +"px";
+// const header=document.querySelector("header");
+// header.style.marginTop=nav.offsetHeight +"px";
+
 /* End header */
+
 //swap nav bar mobile
 
 let touch_start,touch_end;
