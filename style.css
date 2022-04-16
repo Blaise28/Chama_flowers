@@ -78,7 +78,7 @@ nav{
     top: 0;
     width: 100%;
     z-index: 900;
-    transition: top .4s ease-in;
+    transition: top .2s ease-out;
 }
 nav.scroll{
     position: fixed;
@@ -168,6 +168,7 @@ nav .links_contener{
     padding-bottom: 0.4rem;
     transition:all .2s ease-in-out;
     font-weight: bold;
+    cursor: pointer;
 }
 .links_contener .link:hover{
     border-bottom: 3px solid var(--green);
