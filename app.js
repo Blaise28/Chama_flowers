@@ -14,7 +14,6 @@ categorie.addEventListener("click",(e)=>{
     sub_titles_categ.classList.toggle("active");
     down_up_bar.classList.toggle("active");
 });
-
 sub_titles_categ_link.forEach(sub_link =>{
     sub_link.addEventListener("click",(e)=>{
         e.stopPropagation();
@@ -41,6 +40,7 @@ const links=document.querySelectorAll(".links_contener li a");
 
 links.forEach(link=>{
     link.addEventListener("click",(e)=>{
+        e.stopPropagation();
         links_contener.classList.remove("active"); 
         btn_open.style.display="";
     });
@@ -49,33 +49,40 @@ links.forEach(link=>{
 let scroll_previous=window.scrollY;
 const nav_logo=document.querySelector("nav .logo");
 const all_nav_links=document.querySelectorAll(".links_contener .link");
+const header=document.querySelector("header");
 
 // ca demande beaucoup de calcul a la machine
 
-let acceuil_scroll= ()=>{
-
+function up_down_scroll(previous,current,verif_class){
+    if (previous > current){
+        nav.style.top="0px";
+    }
+    else{
+        nav.style.top="-"+nav_logo.offsetHeight+"px";
+    }
 }
+
 window.addEventListener("scroll",()=>{
+
     let scroll_current=window.scrollY;
-        if(window.scrollY > nav.offsetHeight){
-            nav.classList.add("scroll");
-            if (scroll_previous > scroll_current){
-                nav.style.top="0px";
-            }
-            else{
-                nav.style.top="-"+nav_logo.offsetHeight+"px";
-            }
-        }
-        else{
-            nav.classList.remove("scroll");
-        }
+    let verif_class= nav.classList.contains("scroll")
+    let nav_height=nav.offsetHeight
+
+    if(scroll_current > nav_height && !verif_class){
+        nav.classList.add("scroll");
+    }
+    else if (scroll_current > nav_height && verif_class) {
+        up_down_scroll(scroll_previous,scroll_current);
+    }
+    else if (scroll_current < nav_height && verif_class) {
+        nav.classList.remove("scroll");
+    }
     scroll_previous=scroll_current;
 });
 /* End navigation */
 
 //swap nav bar mobile
 
-const bloc=document.querySelector(".links_contener");
 let touch_start,touch_end;
 
 let nav_mob=document.querySelector("nav .links_contener");
@@ -88,8 +95,8 @@ nav_mob.addEventListener("touchmove",(e)=>{
 nav_mob.addEventListener("touchend",(e)=>{
     if(touch_start - touch_end > 50)
     {
-        links_contener.classList.remove("active");
-        btn_open.style.display="";
+        bloc.classList.remove("active");
+        btn_open.style.display="flex";
     }
 });
 /* quantite input and price products */
@@ -239,12 +246,11 @@ function envoi_message() {
     succes(name);
    }
 }
-const cont_form=document.querySelector(".section_cont form");
 button.addEventListener("click",(e)=>{
     e.preventDefault();
     envoi_message();
     envoi_SMS();
-    cont_form.reset();
+    document.querySelector("form").reset();
 })
 ;
 /* End send Email */
@@ -290,4 +296,6 @@ function envoi_SMS(){
         succes(name);
     }
 }
+
+
  /* End send SMS */
