@@ -95,7 +95,7 @@ nav_mob.addEventListener("touchmove",(e)=>{
 nav_mob.addEventListener("touchend",(e)=>{
     if(touch_start - touch_end > 50)
     {
-        bloc.classList.remove("active");
+        links_contener.classList.remove("active");
         btn_open.style.display="flex";
     }
 });
