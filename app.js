@@ -1,3 +1,23 @@
+// creer dynamiquement le html
+const categ_titles=[
+    "Choco-cake",
+    "Bouquet simple",
+    "Bouquet Dot",
+    "Bouquet de mariée",
+    "Panier de fleurs",
+    "fleur de table",
+    "Fleurs de tombe",
+    "Bouquet accompagne"
+]
+const prod_recent_titles=[
+    "Choco-cake",
+    "Bouquet simple",
+    "Bouquet Dot",
+    "Bouquet de mariée",
+    "fleur de table",
+    "Bouquet accompagne"
+]
+
 // preloader
 const contener_preloader=document.querySelector(".preloader_contener");
 window.addEventListener("load",()=>{

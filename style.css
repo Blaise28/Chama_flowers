@@ -46,7 +46,7 @@ body{
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: opacity .4s ease-out;
+    transition: all .2s ease-out;
     z-index: 1000;
 }
 .preloader_contener.fondu_out{
@@ -155,7 +155,6 @@ nav .links_contener{
 }
 .links_contener ul li{
     margin: 0 3rem;
-    cursor: pointer;
     transform: scale(1.0);
     transition: all .2s ease-in-out;
 }
@@ -169,6 +168,7 @@ nav .links_contener{
     padding-bottom: 0.4rem;
     transition:all .2s ease-in-out;
     font-weight: bold;
+    cursor: pointer;
 }
 .links_contener .link:hover{
     border-bottom: 3px solid var(--green);
@@ -183,6 +183,7 @@ nav .links_contener{
     position: absolute;
     bottom: 50%;
     top: 30%;
+    cursor: pointer;
     border-bottom: 2px solid var( --raisin-black);
     border-right: 2px solid var( --raisin-black);
     transform: rotate(45deg);
@@ -315,6 +316,7 @@ header .contener_desc:hover{
 .card_categ img{
     width: 300px;
     height: 285px;
+    object-fit: cover;
 }
 .card_categ .card_categ_desc{
     background: var(--coul_sec);
@@ -346,19 +348,21 @@ header .contener_desc:hover{
     margin: 0 auto;
     justify-content: center;
 }
-.contener_cards_prod .card_prod{
+.card_prod{
     overflow: hidden;
     border: 1px solid var(--raisin-black);
 }
-.contener_cards_prod .card_prod img{
+.card_prod img{
     width: 300px;
     height: 285px;
+    object-fit: cover;
 }
 .card_prod .card_prod_desc{
     background: var(--raisin-black);
     padding: 1rem;
     text-align: center;
     width: 100%;
+    max-width: 300px;
 }
 .card_prod_desc h2{
     font-size: 3rem;
@@ -606,6 +610,231 @@ footer .my_logo{
     width: 5rem;
     height: auto;
 }
+
+/* start carousel */
+
+.card_prod{
+    overflow: hidden;
+    border: 1px solid var(--raisin-black);
+    width: max-content;
+    border-radius: 1rem;
+}
+.card_prod img{
+    width: 300px;
+    height: 285px;
+}
+.card_prod .card_prod_desc{
+    background: var(--raisin-black);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+.card_prod_desc h2{
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.card_prod_desc .contener_desc_prod{
+    display: flex;
+    justify-content: space-around;
+}
+.contener_desc_prod .quant_value_prod{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card_prod_desc .quant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.quant h3{
+    color: var(--green);
+    font-size: 2rem;
+}
+.quant input{
+    margin: 0 .5rem;
+    height: 2.5rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    font-size: 1.6rem;
+    color: var(--raisin-black);
+}
+.card_prod_desc .price{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--coul_sec);
+}
+.contener_desc_prod .link_prod{
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    border-radius: 10rem;
+    position: relative;
+    top: -1rem;
+    right: -2rem;
+    border-left: 3px solid var(--green);
+    border-bottom: 1px solid var(--green);
+}
+.link_prod i{
+    font-size: 2.3rem;
+    margin: 0.4rem 0;
+}
+.link_prod .like.active{
+    color: var(--heart);
+    animation: animateHeart 1s ease-in-out infinite;
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.9);
+  }
+  5% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+.card_prod_desc button{
+    background: var(--green);
+    padding: 0.7rem;
+    font-size: 2rem;
+    color: var(--white);
+    border-radius: 0.3rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* carousel */
+
+.carousel{
+  position: relative;
+  background-color: var(--coul_sec);
+}
+.carousel_contener::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+.carousel_item{
+  float: left;
+}
+.center_item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel_next,
+.carousel_prev{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  background: #fff url(../../Etude\ Javascript/Etude\ carousel/image/right.svg) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  margin-top: -20px;
+  right: 10px;
+  box-shadow: 0 15px 35px #3232321a , 0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform .3s ,opacity .3s;
+}
+.carousel_contener{
+  transition: transform .3s;
+  transform: translate3d(0,0,0);
+  padding: 2rem 1rem;
+}
+.carousel_next:hover,
+.carousel_prev:hover{
+  transform: scale(1.2);
+}
+.carousel_prev{
+  background-image: url(../../Etude\ Javascript/Etude\ carousel/image/left.svg);
+  right: auto;
+  left: 10px;
+}
+.carousel_next_hidden,
+.carousel_prev_hidden{
+  display: none;
+}
+
+/* modal */
+
+.contener_modal{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.contener_modal.disable{
+    display: none;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333333d5;
+}
+.modal_content{
+  width: 95%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.button_close{
+  background-image: url(images/xmark-solid.svg);
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 10px;
+  right: 25px;
+  z-index: 200;
+  border-radius: 2rem;
+  background-color: var(--green);
+  border: 3px solid var(--coul_sec);
+  cursor: pointer;
+}
+@media screen and (max-width: 425px){
+    .carousel_prev,
+    .carousel_next{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .carousel_prev{
+        left: 0.6rem;
+    }
+    /* .carousel_next{
+
+    }
+    .card_prod img {
+
+    }
+    .button_close{
+
+    } */
+}
+/* end carousel */
+
 /* responsive design */
 @media screen and (max-width: 1300px){
     header .contener_desc{
@@ -797,6 +1026,7 @@ footer .my_logo{
     .liens a i{
         font-size: 3.5rem;
     }
+}
 @media screen and (max-width: 445px){
     .footer_info .apropos{
         text-align: center;
