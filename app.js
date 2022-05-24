@@ -1,22 +1,22 @@
 // creer dynamiquement le html
-const categ_titles=[
-    "Choco-cake",
-    "Bouquet simple",
-    "Bouquet Dot",
-    "Bouquet de mariée",
-    "Panier de fleurs",
-    "fleur de table",
-    "Fleurs de tombe",
-    "Bouquet accompagne"
-]
-const prod_recent_titles=[
-    "Choco-cake",
-    "Bouquet simple",
-    "Bouquet Dot",
-    "Bouquet de mariée",
-    "fleur de table",
-    "Bouquet accompagne"
-]
+// const categ_titles=[
+//     "Choco-cake",
+//     "Bouquet simple",
+//     "Bouquet Dot",
+//     "Bouquet de mariée",
+//     "Panier de fleurs",
+//     "fleur de table",
+//     "Fleurs de tombe",
+//     "Bouquet accompagne"
+// ]
+// const prod_recent_titles=[
+//     "Choco-cake",
+//     "Bouquet simple",
+//     "Bouquet Dot",
+//     "Bouquet de mariée",
+//     "fleur de table",
+//     "Bouquet accompagne"
+// ]
 
 // preloader
 const contener_preloader=document.querySelector(".preloader_contener");
@@ -73,7 +73,7 @@ const header=document.querySelector("header");
 
 // ca demande beaucoup de calcul a la machine
 
-function up_down_scroll(previous,current,verif_class){
+function up_down_scroll(previous,current){
     if (previous > current){
         nav.style.top="0px";
     }
@@ -122,20 +122,10 @@ nav_mob.addEventListener("touchend",(e)=>{
 /* quantite input and price products */
 
 const quant_inputs=document.querySelectorAll(".quant input");
-let quant_avant=1,quant_apres;
-const prix_initial=4000;
-quant_inputs.forEach(input_case=>{
-    input_case.addEventListener("input",()=>{
-        let parent_input=input_case.parentElement;
-        let next_Element_input=parent_input.nextElementSibling;
-        let price=next_Element_input.children[0];
-        quant_apres=input_case.value;
+export let quant_avant=1,quant_apres;
+export const prix_initial=4000;
 
-        price.innerText=calcul_prix(quant_avant,quant_apres,prix_initial);
-    });
-    quant_avant=input_case.value;
-})
-function calcul_prix(quant_avant,quant_apres,prix_initial){
+export function calcul_prix(quant_avant,quant_apres,prix_initial){
     let prix;
     if(quant_avant < quant_apres)
         prix=prix_initial * quant_apres;
@@ -144,14 +134,32 @@ function calcul_prix(quant_avant,quant_apres,prix_initial){
     return prix;
 }
 
+export function set_value_input(inputs) {
+    inputs.forEach(input_case=>{
+        input_case.addEventListener("input",()=>{
+            let parent_input=input_case.parentElement;
+            let next_Element_input=parent_input.nextElementSibling;
+            let price=next_Element_input.children[0];
+            quant_apres=input_case.value;
+            price.innerText=calcul_prix(quant_avant,quant_apres,prix_initial);
+        });
+        quant_avant=input_case.value;
+    });
+}
+set_value_input(quant_inputs);
+
 /* heart buttons */
 const heart_buttons=document.querySelectorAll(".link_prod .like");
- 
-heart_buttons.forEach(heart_button => {
-     heart_button.addEventListener("click",()=>{
-        heart_button.classList.toggle("active");
-     });
- });
+
+export function heart_button_animation(hearts_buttons){
+    hearts_buttons.forEach(heart_button => {
+        heart_button.addEventListener("click",()=>{
+           heart_button.classList.toggle("active");
+        });
+    });
+}
+
+heart_button_animation(heart_buttons);
 
 /* End heart buttons */
 

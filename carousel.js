@@ -1,70 +1,64 @@
-const carousel1_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+import { set_value_input,heart_button_animation} from "./app.js"
+
+const carous_choco_cake_imgs=[
     "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel2_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_bouq_simple_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel3_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_bouq_dot_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel4_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_panier_f_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel5_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_f_table_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel6_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_f_tombe_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel7_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+const carous_bouq_accomp_imgs=[
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
 const carousel8_img=[
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-    "/images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+    "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
 ]
-const carousel1=document.querySelector(".carousel1");
-// const carousel2=document.querySelector(".carousel2");
-// const carousel3=document.querySelector(".carousel3");
-// const carousel4=document.querySelector(".carousel4");
-// const carousel5=document.querySelector(".carousel5");
-// const carousel6=document.querySelector(".carousel6");
-// const carousel7=document.querySelector(".carousel7");
-// const carousel8=document.querySelector(".carousel8");
 
 function create_card_carousel(contener,tab_url){
-
+    
     for (let i = 0; i < tab_url.length; i++) {
        contener.innerHTML += 
         `
@@ -91,17 +85,6 @@ function create_card_carousel(contener,tab_url){
        `      
     }
 }
-create_card_carousel(carousel1,carousel1_img);
-/*create_card_carousel(carousel2,carousel2_img);
-create_card_carousel(carousel3,carousel3_img);
-create_card_carousel(carousel4,carousel4_img);
-create_card_carousel(carousel5,carousel5_img);
-create_card_carousel(carousel6,carousel6_img);
-create_card_carousel(carousel7,carousel7_img);
-create_card_carousel(carousel8,carousel8_img);*/
-
-
-
 /**
  * cade source carousel
  */
@@ -197,7 +180,8 @@ class carousel{
      * @param {boolean} [options.loop=false ] Doit on boucler a la fin du carousel
      * @param {boolean} [options.infinite=false ]
      */
-    constructor (element,options={}){
+
+    constructor (element,options={},images){
 
         this.element=element;
         this.options=Object.assign({},{
@@ -206,7 +190,12 @@ class carousel{
             slidesToVisible: 1,
             loop: false,
             infinite: false,
-        },options)
+        },options,
+        this.images=images,
+        )
+
+        create_card_carousel(this.element,this.images)
+        
         if(this.options.loop && this.options.infinite){
             throw new Error("un carousel ne peut etre a la fois en boucle et enfinie");
         }
@@ -225,6 +214,7 @@ class carousel{
         this.root.setAttribute("tabindex","0")
         this.element.appendChild(this.root)
         this.element.classList.add("modal_content")
+        
         
         this.items= children.map(child => {
 
@@ -448,24 +438,80 @@ class carousel{
 /**
  * pour eviter les erreurs du chargement quand javascript est asynchrone
  */
-function on_ready(){
-    new carousel(document.querySelector(".carousel1"),{
+function on_ready(carousel_element,carousel_imgs){
+    
+    new carousel(carousel_element,{
         slidesToScroll: 2,
         slidesToVisible:3,
         loop: false,
         infinite: true,
-    })
+    },
+        carousel_imgs,
+    )
 }
-if(document.readyState !== "loading"){
-    on_ready()
-}
+
 document.addEventListener("DOMContentLoaded",on_ready)
 
-const carousel=document.querySelector(".contener_modal ")
-const close_modal=document.querySelectorAll(".close_modal")
-close_modal.forEach( trigger=> {
-    trigger.addEventListener("click",()=>{
-        
+function close_modal_delete_child_element(element,trigger,contener_modal){
+
+    trigger.addEventListener("click",(e)=>{
+        e.stopPropagation()
+        contener_modal.classList.add("disable")
+
+        const del_child=element.querySelector(".carousel")
+        console.log(del_child);
+        element.removeChild(del_child)
     })
-    }
-)
+}
+
+function go_with_carousel(tab_all_carousel,name_class){
+    let class_name;
+
+    tab_all_carousel.forEach(carousel=>{
+        if(carousel.classList.contains(name_class)){
+            class_name=name_class;
+        }
+    })
+    return class_name
+}
+
+function object_images(nom){
+   if(nom=="carous_choco_cake")
+        return carous_choco_cake_imgs
+    else if(nom=="carous_bouq_simple")
+        return carous_bouq_simple_imgs
+    else if(nom=="carous_bouq_dot")
+        return carous_bouq_dot_imgs
+}
+
+const all_show_carous_button=document.querySelectorAll(".show_carousel")
+const all_carousel=document.querySelectorAll(".carousel")
+
+all_show_carous_button.forEach(show_carousel=>{
+
+    let carousel_elt,contener_modal,close_modal;
+
+    show_carousel.addEventListener("click",(e)=>{
+        
+        let target_class=e.target.classList.item(1);
+        let class_carous_name=go_with_carousel(all_carousel,target_class)
+        carousel_elt=document.querySelector(`.carousel.${class_carous_name}`)
+
+        contener_modal=carousel_elt.parentElement;
+        close_modal=contener_modal.querySelectorAll(".close_modal");
+        
+        if(document.readyState !== "loading"){
+            on_ready(carousel_elt,object_images(class_carous_name))
+            contener_modal.classList.remove("disable")
+        }
+        close_modal.forEach(trigger=>{
+            close_modal_delete_child_element(carousel_elt,trigger,contener_modal)
+        })
+
+        let modal_quant_inputs=carousel_elt.querySelectorAll(".quant input");
+        set_value_input(modal_quant_inputs);
+
+        let heart_buttons=carousel_elt.querySelectorAll(".link_prod .like")
+        heart_button_animation(heart_buttons);
+    })
+});

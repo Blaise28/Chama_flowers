@@ -36,7 +36,7 @@
 
     <!-- js pour le carousel -->
 
-    <script src="carousel.js" async></script>
+    
 
     <!-- Phone number API -->
 
@@ -123,56 +123,56 @@
                 <img src="images_compresser/ananthu-selvam-62saZ_T5AP0-unsplash.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Choco-cake</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_choco_cake" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="B_simple">
                 <img src="images_compresser/christie-kim-0IsBu45B3T8-unsplash_large.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Bouquet simple</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_bouq_simple" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="B_Dot">
-                <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash.jpg" alt="">
+                <img src="images_compresser/carrie-beth-williams-s3AFTBZ3cnc-unsplash.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Bouquet Dot</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_bouq_dot" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="B_marie">
                 <img src="images_compresser/demi-he-hPcxvCecdPI-unsplash_large.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Bouquet de mariée</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_bouq_marie" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="P_fleurs">
                 <img src="images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Panier de fleurs</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_panier_f" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="F_table">
                 <img src="images_compresser/ryunosuke-kikuno-cFxUZ7UAf-c-unsplash.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>fleur de table</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_f_table" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="F_tombe">
                 <img src="images_compresser/t-kaiser-s20DwgFw0hI-unsplash.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Fleurs de tombe</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_f_tombe" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
             <div class="card_categ" id="B_accompagne">
                 <img src="images_compresser/uljana-maljutina-NFj6pEUdmpY-unsplash.jpg" alt="">
                 <div class="card_categ_desc">
                     <h3>Bouquet accompagne</h3>
-                    <button>Voir dans cette categorie</button>
+                    <button class="show_carousel carous_bouq_accomp" type="button">Voir dans cette categorie</button>
                 </div>
             </div>
         </div>
@@ -396,36 +396,49 @@
     <div class="contener">
         <div class="contener_modal disable">
             <div class="close_modal button_close">
+                <i class="fas fa-times"></i>
             </div>
             <div class="overlay close_modal">
             </div>
-            <div class="carousel1"></div>
+            <div class="carousel carous_choco_cake"></div>
         </div>
+
+        <div class="contener_modal disable">
+            <div class="close_modal button_close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="overlay close_modal">
+            </div>
+            <div class="carousel carous_bouq_simple"></div>
+        </div> 
+        <div class="contener_modal disable">
+            <div class="close_modal button_close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="overlay close_modal">
+            </div>
+            <div class="carousel carous_bouq_dot"></div>
         </div>
-        <!-- <div class="carousel2">
+        <!-- 
+        <div class="carousel carous_bouq_marie">
             
         </div>
-        <div class="carousel3">
+        <div class="carousel carous_panier_f">
             
         </div>
-        <div class="carousel4">
+        <div class="carousel carous_f_table">
             
         </div>
-        <div class="carousel5">
+        <div class="carousel carous_f_tombe">
             
         </div>
-        <div class="carousel6">
-            
-        </div>
-        <div class="carousel7">
-        
-        </div>
-        <div class="carousel8">
+        <div class="carousel carous_bouq_accomp">
         </div> -->
     </div>
     
     <!-- End carousel -->
 
     <script src="app.js"></script>
+    <script type="module" src="carousel.js" async ></script>
 </body>
 </html>

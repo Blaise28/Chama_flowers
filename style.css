@@ -287,7 +287,7 @@ header .contener_desc:hover{
     margin: 2rem 10%;
 }
 .title h2{
-    font-size: 4.3rem;
+    font-size: 4rem;
     color: var(--raisin-black);
     padding: 0px 2rem;
     border-left: 7px solid var(--green);
@@ -800,12 +800,9 @@ footer .my_logo{
   border-radius: 1rem;
 }
 .button_close{
-  background-image: url(images/xmark-solid.svg);
   position: absolute;
   width: 35px;
   height: 35px;
-  background-repeat: no-repeat;
-  background-position: center;
   top: 10px;
   right: 25px;
   z-index: 200;
@@ -813,6 +810,10 @@ footer .my_logo{
   background-color: var(--green);
   border: 3px solid var(--coul_sec);
   cursor: pointer;
+  text-align: center;
+}
+.button_close i{
+    font-size: 2.7rem;
 }
 @media screen and (max-width: 425px){
     .carousel_prev,
