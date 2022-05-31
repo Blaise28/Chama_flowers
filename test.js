@@ -1,1 +1,0 @@
-FileSystemDirectoryEntry.length

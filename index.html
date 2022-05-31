@@ -63,10 +63,21 @@
                 </span>
             </div>
             <form>
-                <input type="search" id="search_input" class="search_input" placeholder="Recherche ...">
+                <input type="search" id="search_input" class="search_input" placeholder="Recherche ..." list="search_suggestions">
                 <label for="search_input" class="btn_search">
                     <i class="fas fa-search"></i>
                 </label>
+                <datalist id="search_suggestions">
+                    <option value="Panier de fleurs">
+                    <option value="Bouquet Dot">
+                    <option value="Bouquet simple">
+                    <option value="Choco-Cake">
+                    <option value="Bouquet Mariee">
+                    <option value="Fleurs de tombe">
+                    <option value="Fleurs de table">
+                    <option value="Qui somme nous !">
+                    <option value="contact">
+                </datalist> 
             </form>
         </section>
         <section class="links_contener">
@@ -200,7 +211,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -222,7 +233,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -243,7 +254,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -264,7 +275,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -285,7 +296,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -306,7 +317,7 @@
                         </div>
                         <span class="link_prod">
                             <i class="fas fa-heart like"></i>
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share share"></i>
                         </span>
                     </div>
                     <button>Acheter</button>
@@ -394,51 +405,20 @@
     <!-- start carousel -->
 
     <div class="contener">
-        <div class="contener_modal disable">
-            <div class="close_modal button_close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="overlay close_modal">
-            </div>
-            <div class="carousel carous_choco_cake"></div>
-        </div>
-
-        <div class="contener_modal disable">
-            <div class="close_modal button_close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="overlay close_modal">
-            </div>
-            <div class="carousel carous_bouq_simple"></div>
-        </div> 
-        <div class="contener_modal disable">
-            <div class="close_modal button_close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="overlay close_modal">
-            </div>
-            <div class="carousel carous_bouq_dot"></div>
-        </div>
-        <!-- 
-        <div class="carousel carous_bouq_marie">
-            
-        </div>
-        <div class="carousel carous_panier_f">
-            
-        </div>
-        <div class="carousel carous_f_table">
-            
-        </div>
-        <div class="carousel carous_f_tombe">
-            
-        </div>
-        <div class="carousel carous_bouq_accomp">
-        </div> -->
+        <div class="carousel carous_choco_cake" aria-modal="true"></div>
+        <div class="carousel carous_bouq_simple" aria-modal="true"></div>
+        <div class="carousel carous_bouq_dot" aria-modal="true"></div>
+        <div class="carousel carous_bouq_marie" aria-modal="true"> </div>
+        <div class="carousel carous_panier_f" aria-modal="true"></div>
+        <div class="carousel carous_f_table" aria-modal="true"></div>
+        <div class="carousel carous_f_tombe" aria-modal="true"></div>
+        <div class="carousel carous_bouq_accomp" aria-modal="true"></div> 
     </div>
     
     <!-- End carousel -->
 
     <script src="app.js"></script>
+    
     <script type="module" src="carousel.js" async ></script>
 </body>
 </html>

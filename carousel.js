@@ -413,8 +413,7 @@ class carousel{
      */
     get slidesToScroll(){
 
-        return this.isMobile ? 1 : this.istablete ? 2 :this.options.slidesToScroll
-        //return this.isMobile ? 1 : this.options.slidesToScroll
+        return this.isMobile ? 1 : this.istablete ? 2 :this.options.slidesToScroll       //return this.isMobile ? 1 : this.options.slidesToScroll
     }
     
     get slidesToVisible(){
@@ -459,7 +458,6 @@ function close_modal_delete_child_element(element,trigger,contener_modal){
         contener_modal.classList.add("disable")
 
         const del_child=element.querySelector(".carousel")
-        console.log(del_child);
         element.removeChild(del_child)
     })
 }
@@ -501,7 +499,7 @@ all_show_carous_button.forEach(show_carousel=>{
         close_modal=contener_modal.querySelectorAll(".close_modal");
         
         if(document.readyState !== "loading"){
-            on_ready(carousel_elt,object_images(class_carous_name))
+           on_ready(carousel_elt,object_images(class_carous_name))
             contener_modal.classList.remove("disable")
         }
         close_modal.forEach(trigger=>{

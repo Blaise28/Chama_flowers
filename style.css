@@ -115,6 +115,9 @@ nav .logo{
     align-items: center;
     padding: 2rem;
 }
+.logo form.invalid{
+    box-shadow: 3px 4px 3px var(--heart);
+}
 .logo form input{
     text-align: center;
     font-size: 1.55rem;
@@ -815,16 +818,18 @@ footer .my_logo{
 .button_close i{
     font-size: 2.7rem;
 }
-@media screen and (max-width: 425px){
+/* @media screen and (max-width: 425px){
     .carousel_prev,
     .carousel_next{
+        padding: 1.8rem;
         width: 2.5rem;
         height: 2.5rem;
+        right: 1rem;
     }
     .carousel_prev{
         left: 0.6rem;
     }
-    /* .carousel_next{
+    .carousel_next{
 
     }
     .card_prod img {
@@ -832,8 +837,8 @@ footer .my_logo{
     }
     .button_close{
 
-    } */
-}
+    }
+} */
 /* end carousel */
 
 /* responsive design */
@@ -1038,6 +1043,16 @@ footer .my_logo{
     }
     .link_prod i{
         font-size: 3.5rem;
+    }
+    .carousel_prev,
+    .carousel_next{
+        padding: 1.8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        right: 1rem;
+    }
+    .carousel_prev{
+        left: 0.6rem;
     }
 }
 @media screen and (max-width: 370px){

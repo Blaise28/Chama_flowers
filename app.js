@@ -34,6 +34,7 @@ categorie.addEventListener("click",(e)=>{
     sub_titles_categ.classList.toggle("active");
     down_up_bar.classList.toggle("active");
 });
+
 sub_titles_categ_link.forEach(sub_link =>{
     sub_link.addEventListener("click",(e)=>{
         e.stopPropagation();
@@ -63,6 +64,10 @@ links.forEach(link=>{
         e.stopPropagation();
         links_contener.classList.remove("active"); 
         btn_open.style.display="";
+        if(sub_titles_categ.classList.contains("active")){
+            sub_titles_categ.classList.remove("active");
+            down_up_bar.classList.remove("active");
+        }
     });
 });
 
@@ -119,13 +124,36 @@ nav_mob.addEventListener("touchend",(e)=>{
         btn_open.style.display="flex";
     }
 });
+
+/* start search bar */
+// const form_search=document.querySelector("nav form");
+// const all_suggestions=form_search.querySelectorAll('datalist option');
+// const search_bar=form_search.querySelector("#search_input");
+
+// function wich_suggetion(tab_all_suggetions,target_value){
+//     tab_all_suggetions.forEach(suggestion=>{
+//         if(suggestion.value !== target_value.value)
+//            return
+//         else{
+//             return target_value.value;
+//         }
+//     })
+// }
+// search_bar.addEventListener("change",(e)=>{
+//     if(e.target.value=="")
+//         form_search.classList.remove("invalid");
+//      wich_suggetion(all_suggestions);
+// })
+
+/* End search bar */
+
 /* quantite input and price products */
 
 const quant_inputs=document.querySelectorAll(".quant input");
-export let quant_avant=1,quant_apres;
-export const prix_initial=4000;
+let quant_avant=1,quant_apres;
+const prix_initial=4000;
 
-export function calcul_prix(quant_avant,quant_apres,prix_initial){
+function calcul_prix(quant_avant,quant_apres,prix_initial){
     let prix;
     if(quant_avant < quant_apres)
         prix=prix_initial * quant_apres;
@@ -314,6 +342,26 @@ function API_SMS(){
         .catch(error=>console.log(error));
 }
 
+// function appel_tsap(){
+//     const curl = "https://api.twilio.com/2010-04-01/Accounts/ACc40f2c02bcfc746d30cd2046383497c2/Messages.json ";
+//     const auth="ACc40f2c02bcfc746d30cd2046383497c2: da36136890b43417de5a160f0db59125";
+
+//     const myHeader=new Headers({
+//         "Content-Type":"application/x-www-form-urlencoded",
+//         "Authorization":"Basic " + btoa(auth)
+//     });
+//     const init={
+//         method: "POST",
+//         headers:myHeader,
+//         mode:"cors",
+//         //body:"To=72148589From=whatsapp:+15203919630&Body=hello world",
+//     }
+//     fetch(curl)
+//         .then(reponse=>console.log(reponse))
+//         .catch(error=>console.log(error));
+// }
+// appel_tsap()
+
 function envoi_SMS(){
     if(phone_num_is_valid==false ||
      phone.value=="" ){
@@ -324,6 +372,48 @@ function envoi_SMS(){
         succes(name);
     }
 }
-
-
  /* End send SMS */
+
+/* start share buttons */
+
+const share_buttons=document.querySelectorAll(".link_prod .share");
+
+function share_cards(share_buttons){
+    share_buttons.forEach(button=>{
+        button.addEventListener("click",(e)=>{
+            let third_parent_elt=e.target.parentElement.parentElement.parentElement
+            let title=third_parent_elt.querySelector("h2")
+        })
+    });
+}
+/* End share buttons */
+
+ /* cree dynamiquement le html  pour les carousels*/
+
+ function create_div_with_class(class_name) {
+     const div=document.createElement("div");
+     div.setAttribute("class",class_name)
+        
+    return div;
+ }
+ function create_modal_carousel(contener_all_carousel,carousel_elt){
+     const contener_modal=create_div_with_class("contener_modal disable");
+     const cont_button_close=create_div_with_class("close_modal button_close")
+     const icon_close=document.createElement("i");
+     icon_close.setAttribute("class","fas fa-times");
+     const overlay=create_div_with_class("overlay close_modal");
+
+     cont_button_close.appendChild(icon_close)
+     contener_modal.appendChild(cont_button_close);
+     contener_modal.appendChild(overlay)
+     contener_modal.appendChild(carousel_elt)
+
+     contener_all_carousel.appendChild(contener_modal)
+ }
+ const contener_carousel=document.querySelector(".contener");
+ const all_carousels=contener_carousel.querySelectorAll(".carousel");
+
+all_carousels.forEach(carousel => {
+    create_modal_carousel(contener_carousel,carousel);
+});
+/* End */
