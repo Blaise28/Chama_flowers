@@ -817,35 +817,12 @@ footer .my_logo {
   border: 3px solid var(--coul_sec);
   cursor: pointer;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .button_close i {
   font-size: 2.7rem;
 }
-/* @media screen and (max-width: 425px){
-    .carousel_prev,
-    .carousel_next{
-        padding: 1.8rem;
-        width: 2.5rem;
-        height: 2.5rem;
-        right: 1rem;
-    }
-    .carousel_prev{
-        left: 0.6rem;
-    }
-    .carousel_next{
-
-    }
-    .card_prod img {
-
-    }
-    .button_close{
-
-    }
-} */
-/* end carousel */
-
 /* responsive design */
 @media screen and (max-width: 1300px) {
   header .contener_desc {
@@ -873,11 +850,6 @@ footer .my_logo {
 }
 @media screen and (max-width: 768px) {
   nav .logo {
-    /*
-        position: fixed;
-        top: 0 !important;
-        width: 100%;
-        */
     flex-direction: column;
     padding: 1rem;
   }
@@ -1056,19 +1028,19 @@ footer .my_logo {
   .carousel_prev {
     left: 0.6rem;
   }
-  .button_close{
-      width: 30px;
-      height: 30px;
+  .button_close {
+    width: 30px;
+    height: 30px;
   }
-  .button_close i{
-      font-size: 3.2rem;
+  .button_close i {
+    font-size: 3.2rem;
   }
 }
 @media screen and (max-width: 375px) {
   html {
     font-size: 38%;
   }
-  .card_prod img{
+  .card_prod img {
     width: 250px;
     height: 240px;
   }

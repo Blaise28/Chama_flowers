@@ -1,30 +1,9 @@
-// creer dynamiquement le html
-// const categ_titles=[
-//     "Choco-cake",
-//     "Bouquet simple",
-//     "Bouquet Dot",
-//     "Bouquet de mariée",
-//     "Panier de fleurs",
-//     "fleur de table",
-//     "Fleurs de tombe",
-//     "Bouquet accompagne"
-// ]
-// const prod_recent_titles=[
-//     "Choco-cake",
-//     "Bouquet simple",
-//     "Bouquet Dot",
-//     "Bouquet de mariée",
-//     "fleur de table",
-//     "Bouquet accompagne"
-// ]
-
 // preloader
 const contener_preloader = document.querySelector(".preloader_contener");
 window.addEventListener("load", () => {
   contener_preloader.classList.add("fondu_out");
 });
-
-// navigation
+// navigation;
 const categorie = document.querySelector(".categ .up_down");
 const sub_titles_categ = document.querySelector(".subtitles_categ");
 const sub_titles_categ_link = document.querySelectorAll(".subtitles_categ a");
@@ -34,7 +13,6 @@ categorie.addEventListener("click", (e) => {
   sub_titles_categ.classList.toggle("active");
   down_up_bar.classList.toggle("active");
 });
-
 sub_titles_categ_link.forEach((sub_link) => {
   sub_link.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -64,9 +42,9 @@ links.forEach((link) => {
     e.stopPropagation();
     links_contener.classList.remove("active");
     btn_open.style.display = "";
+
     if (sub_titles_categ.classList.contains("active")) {
       sub_titles_categ.classList.remove("active");
-      down_up_bar.classList.remove("active");
     }
   });
 });
@@ -76,7 +54,7 @@ const nav_logo = document.querySelector("nav .logo");
 const all_nav_links = document.querySelectorAll(".links_contener .link");
 const header = document.querySelector("header");
 
-// ca demande beaucoup de calcul a la machine
+//ca demande beaucoup de calcul a la machine
 
 function up_down_scroll(previous, current) {
   if (previous > current) {
@@ -102,7 +80,7 @@ window.addEventListener("scroll", () => {
 });
 /* End navigation */
 
-//swap nav bar mobile
+// swap nav bar mobile
 
 let touch_start, touch_end;
 
@@ -121,35 +99,33 @@ nav_mob.addEventListener("touchend", (e) => {
 });
 
 /* start search bar */
-// const form_search=document.querySelector("nav form");
-// const all_suggestions=form_search.querySelectorAll('datalist option');
-// const search_bar=form_search.querySelector("#search_input");
+const form_search = document.querySelector("nav form");
+const all_suggestions = form_search.querySelectorAll("datalist option");
+const search_bar = form_search.querySelector("#search_input");
 
-// function wich_suggetion(tab_all_suggetions,target_value){
-//     tab_all_suggetions.forEach(suggestion=>{
-//         if(suggestion.value !== target_value.value)
-//            return
-//         else{
-//             return target_value.value;
-//         }
-//     })
-// }
-// search_bar.addEventListener("change",(e)=>{
-//     if(e.target.value=="")
-//         form_search.classList.remove("invalid");
-//      wich_suggetion(all_suggestions);
-// })
+function wich_suggetion(tab_all_suggetions, target_value) {
+  tab_all_suggetions.forEach((suggestion) => {
+    if (suggestion.value !== target_value.value) return;
+    else {
+      return target_value.value;
+    }
+  });
+}
+search_bar.addEventListener("change", (e) => {
+  if (e.target.value == "") form_search.classList.remove("invalid");
+  wich_suggetion(all_suggestions);
+});
 
 /* End search bar */
 
 /* quantite input and price products */
 
 const quant_inputs = document.querySelectorAll(".quant input");
-let quant_avant = 1,
+export let quant_avant = 1,
   quant_apres;
-const prix_initial = 4000;
+export const prix_initial = 4000;
 
-function calcul_prix(quant_avant, quant_apres, prix_initial) {
+export function calcul_prix(quant_avant, quant_apres, prix_initial) {
   let prix;
   if (quant_avant < quant_apres) prix = prix_initial * quant_apres;
   else prix = prix_initial * quant_avant;
@@ -180,6 +156,7 @@ export function heart_button_animation(hearts_buttons) {
     });
   });
 }
+
 heart_button_animation(heart_buttons);
 
 /* End heart buttons */
@@ -205,18 +182,6 @@ const phoneInput = window.intlTelInput(phone, {
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
 });
 
-function valid(input, regex) {
-  if (input.value.match(regex)) {
-    input.classList.remove("invalid");
-    return true;
-  } else if (input.value == "") {
-    input.classList.remove("invalid");
-    return false;
-  } else {
-    input.classList.add("invalid");
-    return false;
-  }
-}
 function verification_phone_number() {
   let exemp_num_p_hol = phoneInput.a.attributes.placeholder.nodeValue;
   let country_code = phoneInput.b.dataset.dialCode;
@@ -244,6 +209,19 @@ mail.addEventListener("input", () => {
 phone.addEventListener("input", () => {
   phone_num_is_valid = verification_phone_number();
 });
+
+function valid(input, regex) {
+  if (input.value.match(regex)) {
+    input.classList.remove("invalid");
+    return true;
+  } else if (input.value == "") {
+    input.classList.remove("invalid");
+    return false;
+  } else {
+    input.classList.add("invalid");
+    return false;
+  }
+}
 /* End validation contact form */
 
 /* start Send email EmailJs */
@@ -283,7 +261,7 @@ function input_require() {
   });
 }
 function envoi_message() {
-  //   let req= required(name,mail,phone,message);
+  let req = required(name, mail, phone, message);
 
   if (
     name_is_valid == false ||
@@ -335,31 +313,32 @@ function API_SMS() {
       "\n Message :" +
       msg,
   };
-
   fetch(url, init)
     .then((reponse) => console.log(reponse))
     .catch((error) => console.log(error));
 }
 
-// function appel_tsap(){
-//     const curl = "https://api.twilio.com/2010-04-01/Accounts/ACc40f2c02bcfc746d30cd2046383497c2/Messages.json ";
-//     const auth="ACc40f2c02bcfc746d30cd2046383497c2: da36136890b43417de5a160f0db59125";
+// function appel_tsap() {
+//   const curl =
+//     "https://api.twilio.com/2010-04-01/Accounts/ACc40f2c02bcfc746d30cd2046383497c2/Messages.json ";
+//   const auth =
+//     "ACc40f2c02bcfc746d30cd2046383497c2: da36136890b43417de5a160f0db59125";
 
-//     const myHeader=new Headers({
-//         "Content-Type":"application/x-www-form-urlencoded",
-//         "Authorization":"Basic " + btoa(auth)
-//     });
-//     const init={
-//         method: "POST",
-//         headers:myHeader,
-//         mode:"cors",
-//         //body:"To=72148589From=whatsapp:+15203919630&Body=hello world",
-//     }
-//     fetch(curl)
-//         .then(reponse=>console.log(reponse))
-//         .catch(error=>console.log(error));
+//   const myHeader = new Headers({
+//     "Content-Type": "application/x-www-form-urlencoded",
+//     Authorization: "Basic " + btoa(auth),
+//   });
+//   const init = {
+//     method: "POST",
+//     headers: myHeader,
+//     mode: "cors",
+//     //body:"To=72148589From=whatsapp:+15203919630&Body=hello world",
+//   };
+//   fetch(curl)
+//     .then((reponse) => console.log(reponse))
+//     .catch((error) => console.log(error));
 // }
-// appel_tsap()
+// appel_tsap();
 
 function envoi_SMS() {
   if (phone_num_is_valid == false || phone.value == "") {
@@ -410,6 +389,7 @@ function create_modal_carousel(contener_all_carousel, carousel_elt) {
 const contener_carousel = document.querySelector(".contener");
 const all_carousels = contener_carousel.querySelectorAll(".carousel");
 
+/* End send SMS */
 all_carousels.forEach((carousel) => {
   create_modal_carousel(contener_carousel, carousel);
 });

@@ -49,7 +49,7 @@ const carous_bouq_accomp_imgs = [
   "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
   "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
 ];
-const carousel8_img = [
+const carous_bouq_marie_imgs = [
   "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
   "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
   "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
@@ -496,12 +496,38 @@ function go_with_carousel(tab_all_carousel, name_class) {
   return class_name;
 }
 
-function object_images(nom) {
-  if (nom == "carous_choco_cake") return carous_choco_cake_imgs;
-  else if (nom == "carous_bouq_simple") return carous_bouq_simple_imgs;
-  else if (nom == "carous_bouq_dot") return carous_bouq_dot_imgs;
+function tab_imgs_can_use(name_class_carousel) {
+  let tab_imgs;
+  switch (name_class_carousel) {
+    case "carous_choco_cake":
+      tab_imgs = carous_choco_cake_imgs;
+      break;
+    case "carous_bouq_simple":
+      tab_imgs = carous_bouq_marie_imgs;
+      break;
+    case "carous_bouq_dot":
+      tab_imgs = carous_bouq_dot_imgs;
+      break;
+    case "carous_bouq_marie":
+      tab_imgs = carous_bouq_marie_imgs;
+      break;
+    case "carous_panier_f":
+      tab_imgs = carous_panier_f_imgs;
+      break;
+    case "carous_f_table":
+      tab_imgs = carous_f_table_imgs;
+      break;
+    case "carous_f_tombe":
+      tab_imgs = carous_f_tombe_imgs;
+      break;
+    case "carous_bouq_accomp":
+      tab_imgs = carous_bouq_accomp_imgs;
+      break;
+    default:
+      break;
+  }
+  return tab_imgs;
 }
-
 const all_show_carous_button = document.querySelectorAll(".show_carousel");
 const all_carousel = document.querySelectorAll(".carousel");
 
@@ -517,7 +543,7 @@ all_show_carous_button.forEach((show_carousel) => {
     close_modal = contener_modal.querySelectorAll(".close_modal");
 
     if (document.readyState !== "loading") {
-      on_ready(carousel_elt, object_images(class_carous_name));
+      on_ready(carousel_elt, tab_imgs_can_use(class_carous_name));
       contener_modal.classList.remove("disable");
     }
     close_modal.forEach((trigger) => {
