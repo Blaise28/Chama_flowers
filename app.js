@@ -78,6 +78,7 @@ window.addEventListener("scroll", () => {
   }
   scroll_previous = scroll_current;
 });
+
 /* End navigation */
 
 // swap nav bar mobile
@@ -99,22 +100,36 @@ nav_mob.addEventListener("touchend", (e) => {
 });
 
 /* start search bar */
+
 const form_search = document.querySelector("nav form");
 const all_suggestions = form_search.querySelectorAll("datalist option");
 const search_bar = form_search.querySelector("#search_input");
+const btn_search = form_search.querySelector(".btn_search");
+const go_to_my_search = form_search.querySelector(".go_to_my_search");
 
-function wich_suggetion(tab_all_suggetions, target_value) {
-  tab_all_suggetions.forEach((suggestion) => {
-    if (suggestion.value !== target_value.value) return;
-    else {
-      return target_value.value;
-    }
-  });
-}
-search_bar.addEventListener("change", (e) => {
-  if (e.target.value == "") form_search.classList.remove("invalid");
-  wich_suggetion(all_suggestions);
+btn_search.addEventListener("click", (e) => {
+  e.stopPropagation();
+  let value = search_bar.value;
+  let id = target_ID(value);
+  go_to_my_search.setAttribute("href", `#${id}`);
 });
+function target_ID(suggestion) {
+  let id;
+  switch (suggestion) {
+    case "Panier de fleurs":
+      id = "#P_fleurs";
+      break;
+    case "Bouquet Dot":
+      id = "#B_Dot";
+      break;
+    case "Bouquet simple":
+      id = "#B_simple";
+      break;
+
+    default:
+      break;
+  }
+}
 
 /* End search bar */
 
@@ -160,10 +175,6 @@ export function heart_button_animation(hearts_buttons) {
 heart_button_animation(heart_buttons);
 
 /* End heart buttons */
-
-/* start share buttons */
-
-/* End share buttons */
 
 /* start validation contact form */
 
