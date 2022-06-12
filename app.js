@@ -101,35 +101,35 @@ nav_mob.addEventListener("touchend", (e) => {
 
 /* start search bar */
 
-const form_search = document.querySelector("nav form");
-const all_suggestions = form_search.querySelectorAll("datalist option");
-const search_bar = form_search.querySelector("#search_input");
-const btn_search = form_search.querySelector(".btn_search");
-const go_to_my_search = form_search.querySelector(".go_to_my_search");
+// const form_search = document.querySelector("nav form");
+// const all_suggestions = form_search.querySelectorAll("datalist option");
+// const search_bar = form_search.querySelector("#search_input");
+// const btn_search = form_search.querySelector(".btn_search");
+// const go_to_my_search = form_search.querySelector(".go_to_my_search");
 
-btn_search.addEventListener("click", (e) => {
-  e.stopPropagation();
-  let value = search_bar.value;
-  let id = target_ID(value);
-  go_to_my_search.setAttribute("href", `#${id}`);
-});
-function target_ID(suggestion) {
-  let id;
-  switch (suggestion) {
-    case "Panier de fleurs":
-      id = "#P_fleurs";
-      break;
-    case "Bouquet Dot":
-      id = "#B_Dot";
-      break;
-    case "Bouquet simple":
-      id = "#B_simple";
-      break;
+// btn_search.addEventListener("click", (e) => {
+//   e.stopPropagation();
+//   let value = search_bar.value;
+//   let id = target_ID(value);
+//   go_to_my_search.setAttribute("href", `#${id}`);
+// });
+// function target_ID(suggestion) {
+//   let id;
+//   switch (suggestion) {
+//     case "Panier de fleurs":
+//       id = "#P_fleurs";
+//       break;
+//     case "Bouquet Dot":
+//       id = "#B_Dot";
+//       break;
+//     case "Bouquet simple":
+//       id = "#B_simple";
+//       break;
 
-    default:
-      break;
-  }
-}
+//     default:
+//       break;
+//   }
+// }
 
 /* End search bar */
 
@@ -329,6 +329,16 @@ function API_SMS() {
     .catch((error) => console.log(error));
 }
 
+function envoi_SMS() {
+  if (phone_num_is_valid == false || phone.value == "") {
+    input_require();
+  } else {
+    API_SMS();
+    succes(name);
+  }
+}
+
+/* End send SMS */
 // function appel_tsap() {
 //   const curl =
 //     "https://api.twilio.com/2010-04-01/Accounts/ACc40f2c02bcfc746d30cd2046383497c2/Messages.json ";
@@ -350,16 +360,6 @@ function API_SMS() {
 //     .catch((error) => console.log(error));
 // }
 // appel_tsap();
-
-function envoi_SMS() {
-  if (phone_num_is_valid == false || phone.value == "") {
-    input_require();
-  } else {
-    API_SMS();
-    succes(name);
-  }
-}
-/* End send SMS */
 
 /* start share buttons */
 
@@ -400,7 +400,6 @@ function create_modal_carousel(contener_all_carousel, carousel_elt) {
 const contener_carousel = document.querySelector(".contener");
 const all_carousels = contener_carousel.querySelectorAll(".carousel");
 
-/* End send SMS */
 all_carousels.forEach((carousel) => {
   create_modal_carousel(contener_carousel, carousel);
 });

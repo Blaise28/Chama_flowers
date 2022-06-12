@@ -394,12 +394,16 @@ class carousel {
   window_on_resize() {
     let mobile = window.innerWidth < 680;
     let tablete = window.innerWidth < 1000;
+    let bigscreen = window.innerWidth > 1000;
 
     if (mobile !== this.isMobile) {
       this.isMobile = mobile;
       this.set_style_movcb();
     } else if (tablete !== this.istablete) {
       this.istablete = tablete;
+      this.set_style_movcb();
+    } else if (bigscreen !== this.isbig_screen) {
+      this.isbig_screen = bigscreen;
       this.set_style_movcb();
     }
   }
@@ -503,7 +507,7 @@ function tab_imgs_can_use(name_class_carousel) {
       tab_imgs = carous_choco_cake_imgs;
       break;
     case "carous_bouq_simple":
-      tab_imgs = carous_bouq_marie_imgs;
+      tab_imgs = carous_bouq_simple_imgs;
       break;
     case "carous_bouq_dot":
       tab_imgs = carous_bouq_dot_imgs;

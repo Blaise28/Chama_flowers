@@ -749,15 +749,14 @@ footer .my_logo {
   width: 40px;
   height: 40px;
   top: 50%;
-  background: #fff url(../../Etude\ Javascript/Etude\ carousel/image/right.svg)
-    center center no-repeat;
+  background: #fff url(./right.svg) center center no-repeat;
   background-size: 20px 20px;
   border-radius: 50%;
   margin-top: -20px;
   right: 10px;
-  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
+  box-shadow: 0px 3px 2px;
 }
 .carousel_contener {
   transition: transform 0.3s;
@@ -769,9 +768,10 @@ footer .my_logo {
   transform: scale(1.2);
 }
 .carousel_prev {
-  background-image: url(../../Etude\ Javascript/Etude\ carousel/image/left.svg);
+  background-image: url(./left.svg);
   right: auto;
   left: 10px;
+  box-shadow: 2px 1px 3px;
 }
 .carousel_next_hidden,
 .carousel_prev_hidden {
@@ -1035,14 +1035,17 @@ footer .my_logo {
   .button_close i {
     font-size: 3.2rem;
   }
-}
-@media screen and (max-width: 375px) {
-  html {
-    font-size: 38%;
+  .modal_content {
+    width: 100%;
   }
   .card_prod img {
     width: 250px;
     height: 240px;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 38%;
   }
 }
 @media screen and (max-width: 320px) {
