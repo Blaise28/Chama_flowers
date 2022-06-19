@@ -95,6 +95,7 @@ nav .logo {
 }
 .logo div img {
   height: 6.5rem;
+  width: 6.5rem;
 }
 .logo div .side_bar {
   display: none;
@@ -211,8 +212,9 @@ nav .links_contener {
   border-radius: 0.5rem;
   z-index: -1;
 }
-.subtitles_categ.active {
+.categ:hover .subtitles_categ {
   display: flex;
+  transition: all 0.3s ease-out;
 }
 .subtitles_categ a {
   padding: 0.3rem;
@@ -252,7 +254,7 @@ header .contener_desc:hover{
     }
 }*/
 .contener_desc h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: var(--raisin-black);
   padding: 1rem;
   border-left: 7px solid var(--green);
@@ -567,9 +569,9 @@ footer .footer_info {
 }
 .coord span i {
   margin-right: 2rem;
-  background: var(--white);
+  background: var(--green);
   padding: 0.5rem;
-  color: var(--raisin-black);
+  color: var(--white);
   border-radius: 0.5rem;
 }
 .coord span h4 {
@@ -810,18 +812,19 @@ footer .my_logo {
   width: 35px;
   height: 35px;
   top: 10px;
-  right: 25px;
+  right: 1%;
   z-index: 200;
-  border-radius: 2rem;
+  border-radius: 0.2rem;
   background-color: var(--green);
-  border: 3px solid var(--coul_sec);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid var(--white);
 }
 .button_close i {
   font-size: 2.7rem;
+  color: var(--white);
 }
 /* responsive design */
 @media screen and (max-width: 1300px) {

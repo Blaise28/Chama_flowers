@@ -4,22 +4,6 @@ window.addEventListener("load", () => {
   contener_preloader.classList.add("fondu_out");
 });
 // navigation;
-const categorie = document.querySelector(".categ .up_down");
-const sub_titles_categ = document.querySelector(".subtitles_categ");
-const sub_titles_categ_link = document.querySelectorAll(".subtitles_categ a");
-const down_up_bar = document.querySelector(".down_up_bar");
-
-categorie.addEventListener("click", (e) => {
-  sub_titles_categ.classList.toggle("active");
-  down_up_bar.classList.toggle("active");
-});
-sub_titles_categ_link.forEach((sub_link) => {
-  sub_link.addEventListener("click", (e) => {
-    e.stopPropagation();
-    sub_titles_categ.classList.remove("active");
-    down_up_bar.classList.remove("active");
-  });
-});
 const nav = document.querySelector("nav");
 const links_contener = document.querySelector(".links_contener");
 const btn_close = document.querySelector(".links_contener .btn_close");
@@ -42,17 +26,11 @@ links.forEach((link) => {
     e.stopPropagation();
     links_contener.classList.remove("active");
     btn_open.style.display = "";
-
-    if (sub_titles_categ.classList.contains("active")) {
-      sub_titles_categ.classList.remove("active");
-    }
   });
 });
 
 let scroll_previous = window.scrollY;
 const nav_logo = document.querySelector("nav .logo");
-const all_nav_links = document.querySelectorAll(".links_contener .link");
-const header = document.querySelector("header");
 
 //ca demande beaucoup de calcul a la machine
 
@@ -136,11 +114,11 @@ nav_mob.addEventListener("touchend", (e) => {
 /* quantite input and price products */
 
 const quant_inputs = document.querySelectorAll(".quant input");
-export let quant_avant = 1,
+let quant_avant = 1,
   quant_apres;
-export const prix_initial = 4000;
+const prix_initial = 4000;
 
-export function calcul_prix(quant_avant, quant_apres, prix_initial) {
+function calcul_prix(quant_avant, quant_apres, prix_initial) {
   let prix;
   if (quant_avant < quant_apres) prix = prix_initial * quant_apres;
   else prix = prix_initial * quant_avant;
