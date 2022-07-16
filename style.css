@@ -131,6 +131,15 @@ nav .logo {
   color: var(--raisin-black);
   font-family: monospace;
 }
+/* #search_suggestions::-webkit-scrollbar{
+  width: 1.3rem;
+}
+#search_suggestions::-webkit-scrollbar-track {
+  background: var(--raisin-black);
+}
+#search_suggestions::-webkit-scrollbar-thumb {
+  background: var(--coul_sec);
+} */
 .btn_search i {
   font-size: 2rem;
   color: var(--white);
@@ -595,7 +604,7 @@ footer .copyright {
   color: var(--white);
   font-size: 1.2rem;
 }
-.copyright h3 {
+.copyright h5 {
   text-align: center;
   color: var(--coul_sec);
 }
@@ -608,14 +617,14 @@ footer .my_logo {
   align-items: center;
   justify-content: center;
 }
-.my_logo a h3 {
+.my_logo a h5 {
   color: var(--raisin-black);
   font-size: 2.5rem;
   margin: 0 2rem;
 }
 .my_logo a img {
   width: 5rem;
-  height: auto;
+  height: 5rem;
 }
 
 /* start carousel */

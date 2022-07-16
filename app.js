@@ -66,7 +66,7 @@ let touch_start, touch_end;
 let nav_mob = document.querySelector("nav .links_contener");
 nav_mob.addEventListener("touchstart", (e) => {
   touch_start = e.targetTouches[0].clientX;
-});
+},true);
 nav_mob.addEventListener("touchmove", (e) => {
   touch_end = e.targetTouches[0].clientX;
 });
@@ -75,7 +75,7 @@ nav_mob.addEventListener("touchend", (e) => {
     links_contener.classList.remove("active");
     btn_open.style.display = "flex";
   }
-});
+},true);
 
 /* start search bar */
 
