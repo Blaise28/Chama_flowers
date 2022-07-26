@@ -1,60 +1,60 @@
 import { set_value_input, heart_button_animation } from "./app.js";
 
 const carous_choco_cake_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_bouq_simple_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_bouq_dot_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_panier_f_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_f_table_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_f_tombe_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_bouq_accomp_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 const carous_bouq_marie_imgs = [
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
-  "./images_compresser/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg",
+  "images/christie-kim-0IsBu45B3T8-unsplash_large.jpg",
+  "images/demi-he-hPcxvCecdPI-unsplash_large.jpg",
+  "images/2cf2076e-233d-499b-b726-436d61d977d7.jpg",
+  "images/t-kaiser-s20DwgFw0hI-unsplash.jpg",
+  "images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg",
 ];
 
 function create_card_carousel(contener, tab_url) {
@@ -561,3 +561,4 @@ all_show_carous_button.forEach((show_carousel) => {
     heart_button_animation(heart_buttons);
   });
 });
+console.log("hello");
