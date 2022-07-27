@@ -977,6 +977,7 @@ footer .my_logo {
   }
   .link_prod i {
     font-size: 2.8rem;
+    cursor: pointer;
   }
   .contener_map_form {
     flex-direction: column-reverse;

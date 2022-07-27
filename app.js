@@ -350,16 +350,28 @@ function envoi_SMS() {
 
 /* start share buttons */
 
-// const share_buttons = document.querySelectorAll(".link_prod .share");
+const share_buttons = document.querySelectorAll(".link_prod .share");
 
-// function share_cards(share_buttons) {
-//   share_buttons.forEach((button) => {
-//     button.addEventListener("click", (e) => {
-//       let third_parent_elt = e.target.parentElement.parentElement.parentElement;
-//       let title = third_parent_elt.querySelector("h2");
-//     });
-//   });
-// }
+function share_cards(share_buttons) {
+  share_buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      let card_prod =
+        e.target.parentElement.parentElement.parentElement.parentElement;
+      share(card_prod);
+    });
+  });
+}
+async function share(element_to_share) {
+  if (navigator.canShare(element_to_share)) {
+    try {
+      await navigator.share(element_to_share);
+    } catch (e) {
+      console.log("putain partage");
+    }
+  }
+}
+share_cards(share_buttons);
+
 /* End share buttons */
 
 /* cree dynamiquement le html  pour les carousels*/
