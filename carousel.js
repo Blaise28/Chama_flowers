@@ -561,4 +561,3 @@ all_show_carous_button.forEach((show_carousel) => {
     heart_button_animation(heart_buttons);
   });
 });
-console.log("hello");

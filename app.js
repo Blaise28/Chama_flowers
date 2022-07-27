@@ -64,18 +64,26 @@ window.addEventListener("scroll", () => {
 let touch_start, touch_end;
 
 let nav_mob = document.querySelector("nav .links_contener");
-nav_mob.addEventListener("touchstart", (e) => {
-  touch_start = e.targetTouches[0].clientX;
-},true);
+nav_mob.addEventListener(
+  "touchstart",
+  (e) => {
+    touch_start = e.targetTouches[0].clientX;
+  },
+  true
+);
 nav_mob.addEventListener("touchmove", (e) => {
   touch_end = e.targetTouches[0].clientX;
 });
-nav_mob.addEventListener("touchend", (e) => {
-  if (touch_start - touch_end > 50) {
-    links_contener.classList.remove("active");
-    btn_open.style.display = "flex";
-  }
-},true);
+nav_mob.addEventListener(
+  "touchend",
+  (e) => {
+    if (touch_start - touch_end > 50) {
+      links_contener.classList.remove("active");
+      btn_open.style.display = "flex";
+    }
+  },
+  true
+);
 
 /* start search bar */
 
@@ -124,7 +132,6 @@ function calcul_prix(quant_avant, quant_apres, prix_initial) {
   else prix = prix_initial * quant_avant;
   return prix;
 }
-
 export function set_value_input(inputs) {
   inputs.forEach((input_case) => {
     input_case.addEventListener("input", () => {
@@ -214,7 +221,9 @@ function valid(input, regex) {
 /* End validation contact form */
 
 /* start Send email EmailJs */
-
+(function () {
+  emailjs.init("user_sA2mntyYPenxl5wK6t6bD");
+})();
 function send_email(nom, email, tel, message) {
   emailjs.send("service_jznakrk", "template_s9skp5d", {
     from_name: email.value,
