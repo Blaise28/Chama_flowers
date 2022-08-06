@@ -24,6 +24,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding: 14rem;
 }
 html::-webkit-scrollbar {
   width: 1.3rem;
@@ -165,7 +166,7 @@ nav .links_contener {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.7rem;
   position: relative;
 }
 .links_contener ul li {
@@ -177,7 +178,7 @@ nav .links_contener {
   transform: scale(1.05);
 }
 .links_contener .link {
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: var(--raisin-black);
   border-bottom: 1px solid var(--green);
   padding-bottom: 0.4rem;
@@ -229,7 +230,7 @@ nav .links_contener {
   padding: 0.3rem;
   border-bottom: 2px solid var(--green);
   margin: 0.2rem auto;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--coul_sec);
 }
 /*  End Navigation  */
@@ -250,7 +251,7 @@ header .contener_desc {
   box-shadow: 1px 0px 5px 4px var(--green);
   padding: 2rem;
   border-radius: 0.7rem;
-  max-width: 55%;
+  max-width: 45%;
 }
 /*
 header .contener_desc:hover{

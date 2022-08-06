@@ -352,25 +352,23 @@ function envoi_SMS() {
 
 const share_buttons = document.querySelectorAll(".link_prod .share");
 
-function share_cards(share_buttons) {
-  share_buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      let card_prod =
-        e.target.parentElement.parentElement.parentElement.parentElement;
-      share(card_prod);
-    });
-  });
-}
-async function share(element_to_share) {
-  if (navigator.canShare(element_to_share)) {
-    try {
-      await navigator.share(element_to_share);
-    } catch (e) {
-      console.log("putain partage");
+share_buttons.forEach(btn=>{
+  btn.addEventListener("click", async ()=>{
+
+    window.location.hash = "#p_recent";
+    const data={
+      title: "Chama_flowers",
+      text: "Nos produits recents",
+      url :window.location.href,
     }
-  }
-}
-share_cards(share_buttons);
+
+    navigator.share(data)
+      .then(()=>console.log("Merci pour le partage"))
+      .catch((e)=>console.log("error"))
+      
+  });
+})
+
 
 /* End share buttons */
 
