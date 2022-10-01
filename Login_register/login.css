@@ -1,0 +1,102 @@
+*,::before,::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;  
+}
+:root {
+    --green: #069c54;
+    --white: #ffffff;
+    --raisin-black: #1d2521;
+    --coul_sec: #c7d1cc;
+    --heart: #b51e45;
+    --yellow:#ff9f1c;
+}
+body{
+    min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--coul_sec);
+}
+.cont_forms{
+    padding: 1rem;
+    border: 1px solid var(--white);
+    border-radius: 0.5rem;
+    width: 500px;
+    background: var(--green);
+}
+.login,
+.register{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+.change_btns{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.title_login,
+.title_register{
+    font-size: 1.7rem;
+    border: none;
+    background: none;
+    padding: 0.3rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: bold;
+}
+.title_login.active,
+.title_register.active{
+    border-bottom: 5px solid var(--yellow);
+}
+.login,
+.register{
+    background: var(--white);
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+}
+.hide{
+    display: none;
+}
+.login input,
+.register input{
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    outline: none;
+    height: 2rem;
+    width: 350px;
+    border: 1px solid var(--green);
+}
+.register input{
+    margin: 0.6rem;
+}
+.login .find_new_pswd{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-family: serif;
+    border-bottom: 1px solid var(--raisin-black);
+    color: #272798;
+}
+input:focus{
+    transform: scale(1.04);
+}
+.btn_login,
+.btn_register{
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    padding: 0.3rem 1.5rem;
+    background: var(--yellow);
+    border: none;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}

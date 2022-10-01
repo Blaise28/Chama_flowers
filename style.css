@@ -19,6 +19,7 @@
   --raisin-black: #1d2521;
   --coul_sec: #c7d1cc;
   --heart: #b51e45;
+  --yellow:#ff9f1c;
 }
 html {
   font-size: 62.5%;
@@ -153,6 +154,9 @@ nav .logo {
 nav .links_contener {
   background: var(--coul_sec);
   box-shadow: 0px 2px 5px var(--raisin-black);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .links_contener .btn_close {
   display: none;
@@ -232,6 +236,16 @@ nav .links_contener {
   margin: 0.2rem auto;
   font-size: 2.2rem;
   color: var(--coul_sec);
+}
+
+.cont_btn_login a {
+  color: black;
+  font-size: 2.3rem;
+  background: var(--yellow);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 /*  End Navigation  */
 
