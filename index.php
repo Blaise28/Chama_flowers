@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,8 +73,37 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
       async
     ></script>
+
+    <!-- notyf -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
   </head>
-  <body>
+  <?php
+  if(! empty($_SESSION["user_info"])){
+    $user_info = $_SESSION["user_info"];
+  ?>
+    <script>
+      window.addEventListener("load",()=>{
+        const notyf = new Notyf({
+                duration:6000,
+                position: {
+                    x: 'right',
+                    y: 'bottom',
+                },
+                type:
+                  {
+                    background:'#ff9f1c',
+                  },
+            });
+            console.log("<?php $user_info["user_name"] ?>");
+      notyf.success("Heureux de vous voir"+"<?= $user_info["user_name"] ?>");
+      })
+    </script>
+  <?php
+  }
+  
+  ?>
     <!-- start preloader -->
     <div class="preloader_contener">
       <div class="preloader"></div>
@@ -148,9 +180,15 @@
           </li>
         </ul>
         </div>
+        <?php
+          if(empty($_SESSION["user_info"])){
+        ?>
         <div class="cont_btn_login">
-          <a href="Login_register/login.html">Se connecter</a>
+          <a href="Login_register/login.php">Se connecter</a>
         </div>
+        <?php
+        }
+        ?>
       </section>
     </nav>
     <!-- End navigation -->
