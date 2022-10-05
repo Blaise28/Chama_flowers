@@ -3,6 +3,7 @@
     require "../classes/user.php";
     $errors = array();
     $errors_login = null;
+
     // if button s'inscrire clicked
     if(isset($_POST["btn_register"])){
         $user_name = $_POST["user_name"];
@@ -10,18 +11,19 @@
         $number = $_POST["tel"];
         $password = $_POST["pswd"];
         $conf_password = $_POST["conf_pswd"];
-
+        $type_user = $_POST["type_user"];
         if($password !== $conf_password){
             $errors["password"] = "Confirmation password incorrect";
         }
 
-        $query_statement = select("select email from user");
-        if($query_statement->rowCount() >0){
+        $query_statement = verify_user($email);
+  
+        if($query_statement->rowCount()>0){
             $errors["email"] = "your email is already exist";
         }
 
         if(count($errors) === 0){
-            $user = new User($user_name,$email,$number,$password);
+            $user = new User($user_name,$email,$number,$password,$type_user);
             $val = $user->insert();
 
             $otp = random_int(1000,99999);
@@ -67,4 +69,7 @@
             }
         }
     }
+    
+    // if the user forget his password
+    
 ?>

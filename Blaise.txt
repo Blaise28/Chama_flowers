@@ -1,0 +1,20 @@
+if (isset($_POST['nouvprod'])) {
+        $conn=new PDO("mysql:host=localhost;dbname=cogemos;charset=utf8","root","");
+        $image=$_FILES['imge']['name'];
+        $cat=htmlspecialchars($_POST['cat']);
+        $des=htmlspecialchars($_POST['descript']);
+        $destination='../photo/'.$image;
+        $imagepath=pathinfo($destination,PATHINFO_EXTENSION);
+        $valid_extension=array("jpg","png","gif");
+        if(!in_array(strtolower($imagepath),$valid_extension)){
+            
+        }
+        if(!move_uploaded_file($_FILES['imge']['tmp_name'],$destination)){
+            
+        }
+
+        $req = $conn->prepare("INSERT INTO images(nomimage,categorimage,descript) values(?,?,?)");
+        $req->execute(array($image, $cat, $des));
+        echo "Términer";
+
+    }

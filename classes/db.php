@@ -38,4 +38,15 @@ function update($query){
         return true;
     }
 }
+function verify_user($email){
+    $con = connexion_db();
+    $query_statement = $con->query("select email from user where email='$email'");
+    if($query_statement === false){
+        var_dump($con->errorInfo());
+        return false;
+    }else{
+        return $query_statement;
+    }
+}
+
 ?>

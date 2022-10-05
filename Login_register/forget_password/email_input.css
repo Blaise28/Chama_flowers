@@ -1,0 +1,64 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+:root {
+  --green: #069c54;
+  --white: #ffffff;
+  --raisin-black: #1d2521;
+  --coul_sec: #c7d1cc;
+  --heart: #b51e45;
+  --yellow: #ff9f1c;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  border: 1px solid var(--green);
+  text-align: center;
+}
+.header {
+  background: var(--coul_sec);
+  padding: 0.5rem 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.body {
+  padding: 1rem;
+}
+form {
+  padding: 0.2rem;
+}
+form .cont_input {
+  padding: 0.2rem 0 1rem 0;
+}
+.cont_input label {
+  font-size: 1.3rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid var(--green);
+}
+.cont_input input {
+  font-size: 1.06rem;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  outline: none;
+  border: 1px solid var(--coul_sec);
+}
+form button {
+  padding: 0.2rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  background: var(--green);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 0.3rem;
+}

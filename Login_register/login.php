@@ -10,8 +10,7 @@ require "signup.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Se connecter</title>
   <link rel="stylesheet" href="login.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <?php require '../essential/notyf.php' ?>
   <!-- <script src="firebase.js" async type="module"></script> -->
 </head>
 
@@ -24,7 +23,7 @@ require "signup.php";
     <form action="login.php" class="login" method="POST">
       <input name="login_email" type="text" placeholder="Adresse electronique" required />
       <input name="login_password" type="password" placeholder="Mot de passe" required />
-      <input name="btn_login" type="submit" class="btn_login" value="Se connecter" />
+      <button name="btn_login" type="submit" class="btn_login" >Se connecter </button>
       <?php
         if($errors_login!== null){
           ?>
@@ -41,7 +40,7 @@ require "signup.php";
           <?php
         }
       ?>
-      <a href="#" class="find_new_pswd">Mot de passe oublie</a>
+      <a href="forget_password/email_input.php" class="find_new_pswd">Mot de passe oublie</a>
     </form>
     <form action="login.php" class="register hide" method="POST">
       <?php
@@ -65,11 +64,26 @@ require "signup.php";
       }
 
       ?>
+      <div class="cont_input">
       <input name="user_name" type="text" placeholder="Nom d'utilisateur" required />
       <input name="email" type="email" placeholder="Votre e-mail" required />
       <input name="tel" type="tel" placeholder="Numero de telephone" required />
       <input name="pswd" type="password" placeholder="Mot de passe" required />
       <input name="conf_pswd" type="password" placeholder="Retaper le mot de passe" required />
+      </div>
+      <div class="cont_type_user">
+        <h3>Vous voulez etre:</h3>
+        <div class="cont_type">
+        <div class="type">
+          <input type="radio" id="client" name="type_user" value="client" checked>
+          <label for="client">Un client</label>
+        </div>
+        <div class="type">
+          <input type="radio" id="saller" name="type_user" value="saller">
+          <label for="saller">Un vendeur</label>
+        </div>
+        </div>
+      </div>
       <button class="btn_register" name="btn_register"> s'inscrirer</button>
     </form>
   </main>

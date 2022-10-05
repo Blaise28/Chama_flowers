@@ -15,12 +15,14 @@ class User
     private $email;
     private $number;
     private $password;
+    private $type;
 
-    public function __construct($user_name, $email, $number, $password)
+    public function __construct($user_name, $email, $number, $password,$type)
     {
         $this->user_name = $user_name;
         $this->email = $email;
         $this->number = $number;
+        $this->type = $type;
         $this->password = password_hash($password, PASSWORD_BCRYPT);
     }
 
@@ -41,11 +43,12 @@ class User
     }
     public function insert()
     {
-        $query = "insert into user(user_name,email,number,password) 
-            values('{$this->user_name}','{$this->email}','{$this->number}','{$this->password}')";
+        $query = "insert into user(user_name,email,number,password,type) 
+            values('{$this->user_name}','{$this->email}','{$this->number}','{$this->password}','{$this->type}')";
         $rep = insert($query);
         return $rep;
     }
+
 
     public function send_mail($subject, $message)
     {
@@ -58,7 +61,7 @@ class User
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'jrueholiday22@gmail.com';                     //SMTP username
+            $mail->Username   = 'jrueholiday22@gmail.com';                  //SMTP username
             $mail->Password   = 'tukdsnwynjkicvar';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -79,6 +82,7 @@ class User
                 $rep = true;
             }
         } catch (Exception $e) {
+            
             // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             
         }

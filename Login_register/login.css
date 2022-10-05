@@ -1,103 +1,143 @@
-*,::before,::after{
+*,
+::before,
+::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;  
+  list-style: none;
 }
 :root {
-    --green: #069c54;
-    --white: #ffffff;
-    --raisin-black: #1d2521;
-    --coul_sec: #c7d1cc;
-    --heart: #b51e45;
-    --yellow:#ff9f1c;
+  --green: #069c54;
+  --white: #ffffff;
+  --raisin-black: #1d2521;
+  --coul_sec: #c7d1cc;
+  --heart: #b51e45;
+  --yellow: #ff9f1c;
 }
-body{
-    min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--coul_sec);
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--coul_sec);
 }
-.cont_forms{
-    padding: 1rem;
-    border: 1px solid var(--white);
-    border-radius: 0.5rem;
-    width: 500px;
-    background: var(--green);
+.cont_forms {
+  padding: 1rem;
+  border: 1px solid var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 3px #c8d0d8;
+  width: 500px;
+  background: var(--white);
 }
-.login,
-.register{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.change_btns{
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 1rem;
+.change_btns {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 3px var(--coul_sec);
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
 }
 .title_login,
-.title_register{
-    font-size: 1.7rem;
-    border: none;
-    background: none;
-    padding: 0.3rem;
-    text-transform: capitalize;
-    cursor: pointer;
-    font-weight: bold;
+.title_register {
+  font-size: 1.7rem;
+  border: none;
+  background: none;
+  padding: 0.3rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--green);
 }
 .title_login.active,
-.title_register.active{
-    border-bottom: 5px solid var(--yellow);
+.title_register.active {
+  border-bottom: 5px solid var(--yellow);
 }
 .login,
-.register{
-    background: var(--white);
-    padding: 1rem 0;
-    border-radius: 0.5rem;
+.register {
+  background: var(--white);
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  text-align: center;
 }
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 .login input,
-.register input{
-    text-align: center;
-    margin: 1rem;
-    font-size: 1.2rem;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    outline: none;
-    height: 2rem;
-    width: 350px;
-    border: 1px solid var(--green);
+.register .cont_input input {
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  outline: none;
+  height: 2rem;
+  width: 350px;
+  border: 1px solid var(--green);
 }
-.register input{
-    margin: 0.6rem;
+.register .cont_input input {
+  margin: 0.6rem;
 }
-.login .find_new_pswd{
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-family: serif;
-    border-bottom: 1px solid var(--raisin-black);
-    color: #272798;
+.login .find_new_pswd {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: serif;
+  border-bottom: 1px solid var(--raisin-black);
+  color: #272798;
 }
-input:focus{
-    transform: scale(1.04);
+input:focus {
+  transform: scale(1.04);
 }
 .btn_login,
-.btn_register{
-    font-size: 1.5rem;
-    text-transform: lowercase;
-    padding: 0.3rem 1.5rem;
-    background: var(--yellow);
-    border: none;
-    border-radius: 0.4rem;
-    margin-top: 1rem;
+.btn_register {
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  padding: 0.3rem 1.5rem;
+  background: var(--yellow);
+  border: none;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.cont_input {
+  text-align: center;
+}
+/* type user */
+.cont_type_user {
+    background: var(--coul_sec);
+    padding: 0.6rem;
+}
+.cont_type_user h3 {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+.cont_type{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cont_type .type {
+    margin-top: 0.6rem;
+}
+.type input {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--green);
+    margin-right: 0.5rem;
+    background: var(--white);
     cursor: pointer;
 }
-
+.type input:checked{
+    background: var(--yellow);
+}
+.type label {
+  font-size: 1.5rem;
+}

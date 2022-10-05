@@ -1,0 +1,5 @@
+1. connection: l'utilisateur choisi entre le mode 
+d'acheter avec le prix ou avec la vente au encher
+2. le decompte en js
+3. le liste du mouvement des encher
+acteur,marche,type de marche
