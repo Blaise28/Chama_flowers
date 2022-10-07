@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,34 +11,11 @@ session_start();
     <title>Chama flowers</title>
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="user/profil.css">
 
     <!-- favicon -->
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="favicon/safari-pinned-tab.svg"
-      color="#069c54"
-    />
-    <meta name="msapplication-TileColor" content="#069c54" />
-    <meta name="theme-color" content="#069c54" />
+    <?php require 'essential/notyf.php' ?>
 
     <!-- font awesome -->
 
@@ -75,8 +52,7 @@ session_start();
     ></script>
 
     <!-- notyf -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <?php require 'essential/notyf.php' ?>
 
   </head>
   <?php
@@ -102,7 +78,6 @@ session_start();
     </script>
   <?php
   }
-  
   ?>
     <!-- start preloader -->
     <div class="preloader_contener">
@@ -146,6 +121,11 @@ session_start();
             <option value="contact"></option>
           </datalist>
         </form>
+        <?php 
+          if(!empty($_SESSION["user_info"])){
+            require 'user/profil.php';
+          }
+        ?>
       </section>
       <section class="links_contener">
         <span class="btn_close">
@@ -187,6 +167,7 @@ session_start();
           <a href="Login_register/login.php">Se connecter</a>
         </div>
         <?php
+        // var_dump($_SESSION["user_info"]);
         }
         ?>
       </section>

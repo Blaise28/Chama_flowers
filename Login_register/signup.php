@@ -51,7 +51,7 @@
         $email = $_POST["login_email"];
         $password = $_POST["login_password"];
 
-        $query = "select * from user where email='{$email}'";
+        $query = "select email,user_name,number,type from user where email='{$email}'";
         $user = select($query);
         if($user->rowCount() === 0){
             $errors_login = "Adresse email ou Mot de passe incorrect";

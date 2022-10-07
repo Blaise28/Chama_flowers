@@ -80,6 +80,7 @@
             $rep = verify_user($email);
             if($rep->rowcount()>0){
                 $subject = "Recuperer votre mot de passe";
+                echo "http://localhost/chama_flowers/login_register/forget_password/new_password.php?password=$email";
                 $message = "<h3>Le lien de recuperation:</h3><br>
                 <a href='http://localhost/chama_flowers/login_register/forget_password/new_password.php?password=$email'>
                     Reinititialiser votre mot de passe

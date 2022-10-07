@@ -1,0 +1,4 @@
+while (!file_exists($nameFile)) {
+    chdir('..');
+    }
+return getcwd();

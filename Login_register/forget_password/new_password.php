@@ -35,11 +35,10 @@ require "../../classes/db.php";
         $rep = update($query);
         var_dump($email,$rep);
         if($rep){
-            var_dump($hash);
             ?>
-            <!-- <script>
+            <script>
                 window.location.replace("../login.php");
-            </script> -->
+            </script>
             <?php
         }
     }
