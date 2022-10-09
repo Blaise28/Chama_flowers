@@ -62,6 +62,7 @@ h2{
     font-weight: bold;
     cursor: pointer;
     border: none;
+    cursor: pointer;
 }
 .edit{
     margin-right: 0.5rem;

@@ -22,8 +22,26 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" name="choice">valider</button>
+            <button type="submit" name="submit_choice">valider</button>
         </form>
             
       </div>
 </aside>
+<?php 
+    if(isset($_POST["submit_choice"])){
+        $choice = $_POST["choice"];
+        if($choice ===  "prix_fixe"){
+            ?>
+                <script>
+                    window.location.replace("../publication/html/prix_fixe.php");
+                </script>
+            <?php
+        }else{
+            ?>
+                <script>
+                    window.location.replace("../publication/html/encheres.php");
+                </script>
+            <?php
+        }
+    }
+?>

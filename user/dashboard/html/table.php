@@ -43,7 +43,7 @@ if(!empty($data)){
                             <button class="delete">Delete</button>
                         </td>
                         <td>
-                            <a href="#modal_choice" class="pub">Publier</a>
+                            <a href="#modal_choice" class="pub open_modal_choice">Publier</a>
                         </td>
                         </tr>
                         <?php

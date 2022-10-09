@@ -22,7 +22,7 @@
     <!-- modal add flowers -->
     <?php require "html/modal_add_flower.php" ?>
     <!-- modal choice -->
-    
+    <?php require "html/modal_choice.php" ?>
 
 </head>
 <body>
@@ -49,7 +49,6 @@
         </section>
     </main>
     
-
-    <!-- <script src="dashboard.js" type="module" defer></script> -->
+    
 </body>
 </html>
