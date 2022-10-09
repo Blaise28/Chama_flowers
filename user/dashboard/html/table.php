@@ -1,86 +1,61 @@
-<h2>Responsive Table</h2>
-<div class="table-wrapper">
-    <table class="fl-table">
-        <thead>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
-            <th>Header 5</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-        </tr>
-        <tr>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-        </tr>
-        <tr>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-        </tr>
-        <tr>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-        </tr>
-        <tr>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-        </tr>
-        <tr>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-        </tr>
-        <tr>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-        </tr>
-        <tr>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-        </tr>
-        <tr>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-        </tr>
-        <tr>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-        </tr>
-        <tbody>
-    </table>
-</div>
+<?php 
+    $query ="SELECT id_flower,image,description,name,quantity 
+    FROM flower JOIN category 
+    ON flower.id_category = category.id_category";
+
+    $data = select($query)->fetchAll(PDO::FETCH_OBJ);
+
+?>
+<h2>liste des fleurs</h2>
+<?php
+if(!empty($data)){
+?>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Action</th>
+                <th>Publication</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php 
+                    for ($i=0; $i < count($data); $i++) { 
+                        ?> <tr> <?php
+                        foreach ($data[$i] as $key => $value) {
+                            if ($key === "image") {
+                                ?> <td>
+                                    <img width="40px" height="40px" src="<?= $value ?> " alt="">
+                                    </td> 
+                                <?php
+                            }else{
+                                ?> <td> <?= $value ?> </td> <?php
+                            }        
+                        }
+                        ?> 
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                        <td>
+                            <a href="#modal_choice" class="pub">Publier</a>
+                        </td>
+                        </tr>
+                        <?php
+                    }
+                
+            ?>
+            <tbody>
+        </table>
+    </div>
+<?php
+}else{
+    ?>
+    <div class="message">Pas de resultat</div>
+    <?php
+}   

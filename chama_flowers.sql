@@ -15,18 +15,23 @@ CREATE TABLE flower(
     image VARCHAR(50) NOT NULL,
     quantity INT(4) NOT NULL,
     email VARCHAR(25) NOT NULL,
-    id_categ INT(5) NOT NULL,
+    id_category INT(5) NOT NULL,
     Foreign Key (email) REFERENCES user(email) ON DELETE CASCADE,
-    Foreign Key (id_categ) REFERENCES category(id_category)
+    Foreign Key (id_category) REFERENCES category(id_category)
 );
+DROP TABLE flower;
+SELECT * from flower;
+SELECT * from category;
 DROP TABLE category;
 CREATE TABLE category(
     id_category INT(5) PRIMARY KEY AUTO_INCREMENT,
     name CHARACTER(30) NOT NULL UNIQUE 
 );
-SELECT * FROM category;
 
+SELECT id_category FROM category WHERE name LIKE "%Fleur de tombe%";
 
+SELECT id_flower,description,image,quantity,name FROM flower JOIN category 
+ON flower.id_category = category.id_category;
 -- DROP TABLE product;
 -- CREATE TABLE
 --     product(

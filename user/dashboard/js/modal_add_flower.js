@@ -1,12 +1,11 @@
-
-let file = document.getElementById("upload");
-let button = document.getElementsByTagName("button");
+// for the image input
+export let file = document.getElementById("upload");
 let progress = document.querySelector('progress');
 let prog_indic = document.querySelector('.progress_indicator');
 let load = 0;
 let proces = "";
 
-file.oninput = ()=>{
+export function select_file (){
     let file_name = file.files[0].name;
     let extension = file_name.split('.').pop();
     let file_size = file.files[0].size;
@@ -19,29 +18,23 @@ file.oninput = ()=>{
     if(file_size == 1000000000000 || file_size <= 1000000000 ){
         file_size = (file_size/1000000000).toFixed(2)+ 'GB';
     }
-    document.querySelector("label").innerText = file_name;
+    document.querySelector(".image_label").innerText = file_name;
     document.querySelector('.ex').innerText = extension;
     document.querySelector(".size").innerText = file_size;
 
     get_file(file_name);
+    upload();
 }
 
-let upload = ()=>{
+function upload (){
     if(load >= 100){
         clearInterval(proces);
         prog_indic.innerText = '100%' + ' ' +'Upload Completed';
-        button[0].classList.remove("active"); 
     }else{
         load++;
         progress.value = load;
         prog_indic.innerText = load + '%' + ' ' +'Upload';
-        button[1].onclick = e =>{
-            e.preventDefault();
-            clearInterval(proces);
-            document.querySelector('.pr').style.display = "none";
-            button[1].style.visibility = "hidden";
-            button[0].classList.remove("active");
-        }
+        
       }
 }
 function get_file(file_name){
@@ -51,11 +44,6 @@ function get_file(file_name){
         load = 0;
         progress.value = 0;
         prog_indic.innerText = "";
-        button[0].onclick = e =>{
-            e.preventDefault();
-            button[0].classList.add("active");
-            button[1].style.visibility = "visible";
             proces = setInterval(upload, 100);
-        }
     }
 }

@@ -1,26 +1,18 @@
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-body{
-    font-family: Helvetica;
-    -webkit-font-smoothing: antialiased;
-    background: rgba( 71, 147, 227, 1);
-}
 h2{
     text-align: center;
-    font-size: 18px;
+    font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: white;
-    padding: 30px 0;
+    letter-spacing: 4px;
+    color: var(--raisin-black);
+    padding: 1rem;
+    font-family: fantasy;
+    text-shadow: 1px 1px 2px var(--green);
 }
 
 /* Table Styles */
 
 .table-wrapper{
-    margin: 10px 70px 70px;
+    margin: 0 0.3rem;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
@@ -43,24 +35,64 @@ h2{
 
 .fl-table td {
     border-right: 1px solid #f8f8f8;
-    font-size: 12px;
+    font-size: .9rem;
 }
-
+.fl-table td img{
+    border-radius: 50%;
+}
 .fl-table thead th {
     color: #ffffff;
-    background: #4FC3A1;
+    background: var(--green);
+    font-size: 1.3rem;
+    font-weight: 100;
 }
-
-
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #324960;
+    background: var(--raisin-black);
 }
 
 .fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+    background: var(--coul_sec);
 }
-
+.edit,
+.delete,
+.pub{
+    padding: .2rem 0.3rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+.edit{
+    margin-right: 0.5rem;
+    background: var(--yellow);
+}  
+.delete{
+    background: var(--green);
+    color: var(--raisin-black);
+}
+.pub{
+    background: var(--raisin-black);
+    color: var(--yellow);
+    box-shadow: 1px 1px 3px var(--raisin-black);
+}
+.onglet.flower{
+    min-height: 100vh;
+    position: relative;
+}
+.onglet.flower .message{
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    border: 2px solid var(--raisin-black);
+    padding: 1rem;
+    border-radius: 1.2rem 0;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    box-shadow: 1px 2px 2px var(--green);
+}
 /* Responsive */
 
 @media (max-width: 767px) {

@@ -1,5 +1,5 @@
 let modal = null;
-const focusableSelector = "button,a,input,textarea";
+const focusableSelector = "button,a,input,textarea,.image_label,select";
 let focusables = [];
 let previouslyFocusedElement = null;
 

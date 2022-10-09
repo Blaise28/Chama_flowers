@@ -40,7 +40,7 @@
             </h3>
             <ul>
                 <li>
-                    <i class="fa-light fa-user-pen"></i>
+                <i class="fa-light fa-pen-to-square"></i>
                     <a href="#">Edit profil</a>
                 </li>
                 <li>
