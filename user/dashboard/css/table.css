@@ -77,6 +77,10 @@ h2{
     color: var(--yellow);
     box-shadow: 1px 1px 3px var(--raisin-black);
 }
+.pub.disabled{
+    opacity: .7;
+    pointer-events: none;
+}
 .onglet.flower{
     min-height: 100vh;
     position: relative;

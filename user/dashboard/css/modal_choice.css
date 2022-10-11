@@ -34,9 +34,10 @@
   font-weight: 600;
 }
 
-.cont_quiz button {
+.cont_quiz .btn_valider {
   width: 100%;
   padding: 0.5rem;
+  display: block;
   border: none;
   background: var(--green);
   font-size: 1.6rem;

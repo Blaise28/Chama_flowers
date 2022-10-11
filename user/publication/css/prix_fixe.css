@@ -1,0 +1,47 @@
+@import url("../../../essential/all_css.css");
+
+body{
+    min-height: 100vh;
+    background: var(--coul_sec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+.cont_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont_input label{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--raisin-black);
+}
+.cont_input input{
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    background: var(--coul_sec);
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 1px solid var(--green);
+}
+.container button{
+    background: var(--green);
+    padding: 0.2rem 2rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    color: var(--white);
+    cursor: pointer;
+}

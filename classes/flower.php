@@ -1,5 +1,5 @@
 <?php 
-    // require "db.php";
+    
     class Flower{
         private $description;
         private $image;

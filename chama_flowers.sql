@@ -32,20 +32,15 @@ SELECT id_category FROM category WHERE name LIKE "%Fleur de tombe%";
 
 SELECT id_flower,description,image,quantity,name FROM flower JOIN category 
 ON flower.id_category = category.id_category;
--- DROP TABLE product;
--- CREATE TABLE
---     product(
---         id_prod INT(5) PRIMARY KEY AUTO_INCREMENT,
---         name VARCHAR(30) NOT NULL,
---         quantity INT(100) NOT NULL,
---         description VARCHAR(50),
---         type CHARACTER(20) NOT NULL,
---         auction_id INT(5) NOT NULL, 
---         email VARCHAR(25) NOT NULL,
---         FOREIGN KEY(auction_id) REFERENCES auction(auction_id) ON DELETE CASCADE ON UPDATE CASCADE,
---         FOREIGN KEY(email)  REFERENCES user(email)
---     );
 
+CREATE TABLE fixed_price(
+    id_price INT(5) PRIMARY KEY AUTO_INCREMENT,
+    price INT(4) NOT NULL,
+    id_flower INT(5) NOT NULl UNIQUE,
+    Foreign Key (id_flower) REFERENCES flower(id_flower)
+);
+SELECT * from fixed_price;
+TRUNCATE TABLE fixed_price;
 -- CREATE TABLE
 --     auction(
 --         auction_id INT(5) PRIMARY KEY AUTO_INCREMENT,

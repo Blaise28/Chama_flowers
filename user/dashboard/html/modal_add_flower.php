@@ -65,7 +65,7 @@
 </aside>
 
 <?php
-  $errors = array();
+
 
   $user_info = $_SESSION["user_info"];
  

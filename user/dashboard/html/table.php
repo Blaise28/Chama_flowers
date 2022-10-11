@@ -25,30 +25,43 @@ if(!empty($data)){
             </thead>
             <tbody>
             <?php 
-                    for ($i=0; $i < count($data); $i++) { 
-                        ?> <tr> <?php
-                        foreach ($data[$i] as $key => $value) {
-                            if ($key === "image") {
-                                ?> <td>
-                                    <img width="40px" height="40px" src="<?= $value ?> " alt="">
-                                    </td> 
-                                <?php
-                            }else{
-                                ?> <td> <?= $value ?> </td> <?php
-                            }        
-                        }
-                        ?> 
-                        <td>
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </td>
-                        <td>
-                            <a href="#modal_choice" class="pub open_modal_choice">Publier</a>
-                        </td>
-                        </tr>
-                        <?php
+                for ($i=0; $i < count($data); $i++) { 
+                    ?> <tr> <?php
+                    foreach ($data[$i] as $key => $value) {
+                        if ($key === "image") {
+                            ?> <td>
+                                <img width="40px" height="40px" src="<?= $value ?> " alt="">
+                                </td> 
+                            <?php
+                        }else{
+                            ?> <td> <?= $value ?> </td> <?php
+                        }        
                     }
-                
+                    ?> 
+                    <td>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                    <td>
+                        <?php
+                            $object = $data[$i];
+                            $id_flower = intval($object->id_flower);
+                            $query = "SELECT * from fixed_price WHERE id_flower={$id_flower}";
+                            $result = select($query);
+                        ?>
+                        <a href="#modal_choice" data-id_flower= <?= $object->id_flower ?>
+                            class="pub open_modal_choice
+                            <?php 
+                                if($result->rowCount() > 0){
+                                    echo "disabled";
+                                }
+                            ?>
+                            ">Publier</a>
+                    </td>
+                    </tr>
+                    
+                    <?php
+                }         
             ?>
             <tbody>
         </table>
@@ -59,3 +72,18 @@ if(!empty($data)){
     <div class="message">Pas de resultat</div>
     <?php
 }   
+?>
+<script>
+    const pub_btns = document.querySelectorAll(".pub.open_modal_choice");
+    pub_btns.forEach((pub) => {
+    pub.addEventListener("click", (e) => {
+        let id = e.target.getAttribute("data-id_flower");
+        sessionStorage.setItem("id_flower",id);
+       <?php 
+
+       ?>
+
+       
+    });
+    });
+</script>
