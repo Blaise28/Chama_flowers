@@ -91,11 +91,12 @@
     }
 
 
-    if(count($upload_error) === 0){
+    if(empty($upload_error)){
+      
       if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
         $flower = new Flower($description,$target_file,$quantity,$email,$category);
         $rep = $flower->insert_flower();
-      
+        
         if($rep === true){
           ?>
           <script>

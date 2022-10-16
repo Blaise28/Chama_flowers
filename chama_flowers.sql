@@ -19,10 +19,6 @@ CREATE TABLE flower(
     Foreign Key (email) REFERENCES user(email) ON DELETE CASCADE,
     Foreign Key (id_category) REFERENCES category(id_category)
 );
-DROP TABLE flower;
-SELECT * from flower;
-SELECT * from category;
-DROP TABLE category;
 CREATE TABLE category(
     id_category INT(5) PRIMARY KEY AUTO_INCREMENT,
     name CHARACTER(30) NOT NULL UNIQUE 
@@ -39,7 +35,16 @@ CREATE TABLE fixed_price(
     id_flower INT(5) NOT NULl UNIQUE,
     Foreign Key (id_flower) REFERENCES flower(id_flower)
 );
-SELECT * from fixed_price;
+
+desc fixed_price;
+SELECT id_flower,description,image,quantity,name FROM flower as f
+JOIN category as c ON c.id_category=f.id_category;
+SELECT * FROM fixed_price as fp 
+JOIN flower as f ON fp.id_flower=f.id_flower
+JOIN category as c ON f.id_category = c.id_category;
+SELECT id_flower,description,image,quantity,name FROM flower as f
+JOIN fixed_price as fp ON fp.id_flower=f.id_flower ;
+
 TRUNCATE TABLE fixed_price;
 -- CREATE TABLE
 --     auction(

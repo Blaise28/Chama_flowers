@@ -1,3 +1,5 @@
+@import url("home/css/cards_flower.css");
+@import url("user/panier/panier.css");
 *,
 ::after,
 ::before {
@@ -696,7 +698,7 @@ footer .my_logo {
   margin-bottom: 1rem;
 }
 .quant h3 {
-  color: var(--green);
+  color: var(--raisin-black);
   font-size: 2rem;
 }
 .quant input {
@@ -706,6 +708,7 @@ footer .my_logo {
   border-radius: 0.2rem;
   font-size: 1.6rem;
   color: var(--raisin-black);
+  background: var(--coul_sec);
 }
 .card_prod_desc .price {
   display: block;

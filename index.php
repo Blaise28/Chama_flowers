@@ -12,6 +12,7 @@ session_start();
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="user/profil.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AZlGsPaD018-9qBNEpN7twM_kn1fNwnaN040l7gYo-ri-5CrgVly_ZaaWoJ919SVIP_T69Llci06ib6G&currency=EUR"></script>
 
     <!-- favicon -->
 
@@ -56,6 +57,7 @@ session_start();
 
   </head>
   <?php
+  require "classes/db.php";
   if(! empty($_SESSION["user_info"])){
     $user_info = $_SESSION["user_info"];
   ?>
@@ -126,6 +128,7 @@ session_start();
             require 'user/profil.php';
           }
         ?>
+        
       </section>
       <section class="links_contener">
         <span class="btn_close">
@@ -187,257 +190,9 @@ session_start();
     </header>
     <!-- End header -->
     <!-- start section Categories -->
-    <section class="section_categ" id="categories">
-      <div class="title">
-        <h2>Categories</h2>
-      </div>
-      <div class="contener_cards_categ">
-        <div class="card_categ" id="Choco-cake">
-          <img
-            src="images/amy-shamblen-qdPnQuGeuwU-unsplash.jpg"
-            alt="une image d'un des fleurs de type Choco-Cake qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Choco-cake</h3>
-            <button class="show_carousel carous_choco_cake" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="B_simple">
-          <img
-            src="images/christie-kim-0IsBu45B3T8-unsplash_large.jpg"
-            alt="une image d'un des fleurs de type Bouquet simple qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Bouquet simple</h3>
-            <button class="show_carousel carous_bouq_simple" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="B_Dot">
-          <img
-            src="images/demi-he-hPcxvCecdPI-unsplash_large.jpg"
-            alt="une image d'un des fleurs de type Bouquet Dot qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Bouquet Dot</h3>
-            <button class="show_carousel carous_bouq_dot" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="B_marie">
-          <img
-            src="images/2cf2076e-233d-499b-b726-436d61d977d7.jpg"
-            alt="une image d'un des fleurs de type Bouquet Mariee qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Bouquet de mariée</h3>
-            <button class="show_carousel carous_bouq_marie" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="P_fleurs">
-          <img
-            src="images/t-kaiser-s20DwgFw0hI-unsplash.jpg"
-            alt="une image d'un des fleurs de type Panier de fleurs qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Panier de fleurs</h3>
-            <button class="show_carousel carous_panier_f" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="F_table">
-          <img
-            src="images/f3d61d4f-50a6-4b90-bec9-6a968509cd05.jpg"
-            alt="une image d'un des fleurs de type Fleurs de table fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>fleur de table</h3>
-            <button class="show_carousel carous_f_table" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="F_tombe">
-          <img
-            src="images/tavin-dotson-WC4IWN3-fSo-unsplash.jpg"
-            alt="une image d'un des fleurs de type Fleurs de tombe qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Fleurs de tombe</h3>
-            <button class="show_carousel carous_f_tombe" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-        <div class="card_categ" id="B_accompagne">
-          <img
-            src="images/uljana-maljutina-NFj6pEUdmpY-unsplash.jpg"
-            alt="une image d'un des fleurs de type Bouquet accompagne qu'on fait chez chamaflowers"
-          />
-          <div class="card_categ_desc">
-            <h3>Bouquet accompagne</h3>
-            <button class="show_carousel carous_bouq_accomp" type="button">
-              Voir dans cette categorie
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End section Categories -->
-    <!-- Start recent product -->
-    <section class="section_prod" id="p_recent">
-      <div class="title">
-        <h2>Produits Recents</h2>
-      </div>
-      <div class="contener_cards_prod">
-        <div class="card_prod">
-          <img
-            src="images/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Choco-Cake chez chamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>Choco-Cake</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-
-        <div class="card_prod">
-          <img
-            src="images/christie-kim-0IsBu45B3T8-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Bouquet simple chez chamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>Bouquet simple</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-        <div class="card_prod">
-          <img
-            src="images/demi-he-hPcxvCecdPI-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Bouquet Dotchamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>Bouquet Dot</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-        <div class="card_prod">
-          <img
-            src="images/astaria-holland-j1gHpeHxnMw-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Bouquet de Mariée chez chamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>Bouquet de Mariée</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-        <div class="card_prod">
-          <img
-            src="images/christie-kim-0IsBu45B3T8-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Fleurs de table chez chamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>fleurs de table</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-        <div class="card_prod">
-          <img
-            src="images/demi-he-hPcxvCecdPI-unsplash_large.jpg"
-            alt="une image du fleur recement cree de type Bouquet accompagne chez chamaflowers"
-          />
-          <div class="card_prod_desc">
-            <h2>Bouquet accompagne</h2>
-            <div class="contener_desc_prod">
-              <div class="quant_value_prod">
-                <span class="quant">
-                  <h3>Quantite :</h3>
-                  <input type="number" min="1" max="1000" value="1" />
-                </span>
-                <span class="price">BIF <strong>4000</strong> </span>
-              </div>
-              <span class="link_prod">
-                <i class="fas fa-heart like"></i>
-                <i class="fas fa-share share"></i>
-              </span>
-            </div>
-            <button>Acheter</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?php 
+      require "home/html/cards_flower.php";
+    ?>
     <!-- End recent product -->
     <!-- start Contact section -->
     <section class="section_cont" id="contact">
