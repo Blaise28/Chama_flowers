@@ -25,7 +25,7 @@
                     <a href="user/dashboard/dashboard.php">Dashboard</a>
                 </li>
                 <li>
-                    <button type="submit" name="logout" class="logout">Logout</button>
+                    <a href="user/logout.php" class="logout">Logout</a>
                 </li>
             </ul>
         </div>
@@ -36,4 +36,5 @@
         const toggleMenu = document.querySelector('.menu');
         toggleMenu.classList.toggle('active')
     }
+    
 </script>
